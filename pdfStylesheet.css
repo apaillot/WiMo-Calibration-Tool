@@ -1,0 +1,57 @@
+h1{
+ color: #9FA0A4;
+}
+
+
+h1, h2, h3, h4, p, td, tr{
+ font-family: "Open Sans";
+}
+
+.h3-channel-name{
+ margin: 10px 0px 30px 0px; 
+}
+
+h3{
+ /*
+ margin-top: 0px;
+ margin-bottom: 140px;
+ */
+ margin: 10px 0px 7px 0px;
+}
+
+h4, p, td, tr{
+ font-size: 9px;
+}
+
+h4 {
+ margin-bottom: 5px;
+}
+
+/*
+.table-calib-point-c *{
+ color: yellow 
+}
+*/
+
+/*
+.table-calib-point-c{
+ margin-left: 30px;
+}
+*/
+
+.specific-param-c table tr td,
+.channel-info-c table tr td{
+ padding-right: 10px;
+}
+
+.table-calib-point-c table{
+ text-align: left;
+}
+
+.table-calib-point-c table th,
+.table-calib-point-c table td{
+ text-align: left;
+ padding-left: 20px;
+ padding-right: 20px;
+ width: 120px;
+}

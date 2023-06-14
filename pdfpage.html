@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rapport calibration</title>
+		<meta charset="UTF-8"/>
+  <link rel="stylesheet" href="pdfStylesheet.css">
+ </head>
+ <body>
+<!--  <h1 align="center">Calibration report</h1>-->
+  <h1 align="center">Calibration report</h1>
+  <br/>
+  <hr/>
+  <table>
+   <tr>
+     <td><strong>Date: </strong></td>
+     <td><span>%s</span></td>
+   </tr>
+   <tr>
+    <td><strong>Identifier: </strong></td>
+    <td><span>%s</span></td>
+   </tr>
+   <tr>
+    <td><strong>Serial number: </strong></td>
+    <td>%02d-%05d</td>
+   </tr>
+   <tr>
+    <td><strong>Firmware version: </strong></td>
+    <td>V%d.%d.%d</td>
+   </tr>
+  </table>
+  <hr/>
+  <div class=\h3-channel-name\>
+   <h3 align=center>Channel %d - %s</h3>
+  </div>
+  <div class=\channel-info-c\>
+   <table>
+    <tr>
+     <td><strong>Channel name: </strong></td>
+     <td><span>%s</span></td>
+    </tr>
+    <tr>
+     <td><strong>Unit: </strong></td>
+     <td><span>%s</span></td>
+    </tr>
+    <tr>
+     <td><strong>Calibration date: </strong></td>
+     <td>%s</td>
+    </tr>
+    <tr>
+     <td><strong>Calibration type: </strong></td>
+     <td>%s</td>
+    </tr>
+    <tr>
+     <td><strong>Formula: </strong></td>
+     <td>%s</td>
+    </tr>
+   </table>
+  </div>
+  <h4>Specific parameters</h4>
+  <div class="specific-param-c">
+   <table>
+    <tr>
+     <td><strong>Integration time: </strong></td>
+     <td>%d</td>
+    </tr>
+    <tr>
+     <td><strong>Range: </strong></td>
+     <td>%d</td>
+    </tr>
+    <tr>
+     <td><strong>Average samples: </strong></td>
+     <td>%d</td>
+    </tr>
+   </table>
+  </div>
+  <h4>Specific parameters</h4>
+  <div class="specific-param-c">
+   <table>
+    <tr>
+     <td><strong>Calibration temperature: </strong></td>
+     <td>%.2f</td>
+    </tr>
+   </table>
+  </div>
+  <h4>Calibration points:</h4>
+  <div class="table-calib-point-c">
+   <table class="table-calib-point">
+    <thead>
+     <tr>
+      <th></th>
+      <th>Physical</th>
+      <th>Raw</th>
+     </tr>
+    </thead>
+    <tbody>
+    <tr>
+     <td>%d:</td>
+     <td>%.3f</td>
+     <td>%.1f</td>
+    </tr>
+    </tbody>
+   </table>
+  </div>
+  <hr/>
+  <div class="">
+   <h5 align="center">nke Instrumentation - WiMo Calibration Tool - %s</h5>
+  </div>
+  
+  <img src="Models/nke-Instrumentation-logo.png" width="150" style="display: block;margin-left: auto;margin-right: auto;"/>
+<!--  <img src="Models/nke-Instrumentation-logo.png" width="150" style="text-align: center"/>-->
+  
+ </body>
+</html>
