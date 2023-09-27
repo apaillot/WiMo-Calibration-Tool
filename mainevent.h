@@ -18,6 +18,8 @@ public:
  void vFMainWindowOpen( void );
  // Ouverture de la fenêtre d'erreur
  void vFMainWindowErrorOpen( QString );
+ // Ouverture de la fenêtre d'info
+ void vFMainWindowInfoOpen( QString );
  // Ouverture de la fenêtre de mise à jour
  void vFMainWindowUpdateDetectedOpen( QString );
  // Clear data de la fenêtre principale
@@ -30,6 +32,8 @@ signals:
  void mainWindowOpen( void );
  // Ouverture de la fenêtre d'erreur
  void mainWindowErrorOpen( QString sErrorMsg );
+ // Ouverture de la fenêtre d'info
+ void mainWindowInfoOpen( QString sMsg );
  // Ouverture de la fenêtre de mise à jour
  void mainWindowUpdateDetectedOpen( QString sNewVersionNumber );
  // Fermeture générale de l'application

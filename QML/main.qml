@@ -320,6 +320,12 @@ Window {
             windowError.text = sErrorMsg
             windowError.open()
         }
+        // Ouverture de la fenêtre d'erreur
+        function onMainWindowInfoOpen( sMsg ) {
+            // Affichage de la fenêtre d'erreur
+            windowInfo.text = sMsg
+            windowInfo.open()
+        }
         // Ouverture de la fenêtre de mise à jour
         function onMainWindowUpdateDetectedOpen( sNewVersionNumber ){
             console.log( "onMainWindowUpdateDetectedOpen > New version : "+sNewVersionNumber );
@@ -1401,6 +1407,15 @@ Window {
         onYes: console.log("copied")
         onNo: console.log("didn't copy")
         onRejected: console.log("aborted")
+    }
+    //---------------------------------------------------------
+    // Fenêtre d'info
+    //---------------------------------------------------------
+    MessageDialog {
+        id: windowInfo
+        title: qsTr("Info")
+        text: qsTr("Information")
+        standardButtons: StandardButton.Ok
     }
 
     //---------------------------------------------------------

@@ -12,3 +12,6 @@
   - Calib - Autorisation de la saisie de 3 chiffres après la virgule pour l'ensemble des capteurs pour les points Raw/Measured.
   - Calib - Passage des restrictions 0->262144 à -262144->262144 pour l'ensemble des capteurs pour les points Raw/Measured.
   - Calib - Interdiction du 0 pour les valeurs Phy/Standard du capteur nitrate.
+
+### V1.3.6 - (2023.06.16)
+  - Dashboard - Elargissement de la fenêtre de sélection du port COM.

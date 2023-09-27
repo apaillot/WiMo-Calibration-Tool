@@ -39,72 +39,102 @@
         <translation>Point</translation>
     </message>
     <message>
-        <location filename="QML/CalibTableView.qml" line="62"/>
+        <location filename="QML/CalibTableView.qml" line="63"/>
+        <source>Standard</source>
+        <translation>Etalon</translation>
+    </message>
+    <message>
+        <location filename="QML/CalibTableView.qml" line="76"/>
+        <source>Measured</source>
+        <translation>Mesure</translation>
+    </message>
+    <message>
         <source>Physical</source>
-        <translation>Physique</translation>
+        <translation type="vanished">Physique</translation>
     </message>
     <message>
-        <location filename="QML/CalibTableView.qml" line="72"/>
         <source>Corrected</source>
-        <translation>Corrigé</translation>
+        <translation type="vanished">Corrigé</translation>
     </message>
     <message>
-        <location filename="QML/CalibTableView.qml" line="72"/>
         <source>Raw</source>
-        <translation>Brut</translation>
+        <translation type="vanished">Brut</translation>
     </message>
 </context>
 <context>
     <name>CalibrationPart</name>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="873"/>
         <source>Calibration</source>
-        <translation>Calibration</translation>
+        <translation type="vanished">Calibration</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="934"/>
         <source>Channel selection</source>
-        <translation>Sélection voie de mesure</translation>
+        <translation type="vanished">Sélection voie de mesure</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="989"/>
         <source>Channel</source>
-        <translation>Voie de mesure</translation>
+        <translation type="vanished">Voie de mesure</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1087"/>
+        <location filename="QML/CalibrationPart.qml" line="765"/>
         <source>Calibration settings</source>
         <translation>Paramètre de calibration</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1140"/>
+        <location filename="QML/CalibrationPart.qml" line="818"/>
         <source>Unit</source>
         <translation>Unité</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1222"/>
-        <location filename="QML/CalibrationPart.qml" line="1350"/>
-        <location filename="QML/CalibrationPart.qml" line="1437"/>
-        <location filename="QML/CalibrationPart.qml" line="1543"/>
+        <location filename="QML/CalibrationPart.qml" line="900"/>
+        <location filename="QML/CalibrationPart.qml" line="1028"/>
+        <location filename="QML/CalibrationPart.qml" line="1115"/>
+        <location filename="QML/CalibrationPart.qml" line="1434"/>
         <source>InvalidValue</source>
         <translation>Valeur invalide</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1250"/>
-        <location filename="QML/CalibrationPart.qml" line="1465"/>
-        <location filename="QML/CalibrationPart.qml" line="1571"/>
+        <location filename="QML/CalibrationPart.qml" line="928"/>
+        <location filename="QML/CalibrationPart.qml" line="1143"/>
+        <location filename="QML/CalibrationPart.qml" line="1462"/>
         <source>Invalid value</source>
         <translation>Valeur invalide</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1297"/>
+        <location filename="QML/CalibrationPart.qml" line="975"/>
         <source>Calibration type</source>
         <translation>Type de calibration</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1412"/>
+        <location filename="QML/CalibrationPart.qml" line="1090"/>
         <source>Average</source>
         <translation>Moyenne</translation>
+    </message>
+    <message>
+        <location filename="QML/CalibrationPart.qml" line="1188"/>
+        <location filename="QML/CalibrationPart.qml" line="1329"/>
+        <source>Calibration theo</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="QML/CalibrationPart.qml" line="1205"/>
+        <source>Y1=</source>
+        <translation>Y1=</translation>
+    </message>
+    <message>
+        <location filename="QML/CalibrationPart.qml" line="1225"/>
+        <source>X1=</source>
+        <translation>X1=</translation>
+    </message>
+    <message>
+        <location filename="QML/CalibrationPart.qml" line="1253"/>
+        <source>Y2=</source>
+        <translation>Y2=</translation>
+    </message>
+    <message>
+        <location filename="QML/CalibrationPart.qml" line="1273"/>
+        <source>X2=</source>
+        <translation>X2=</translation>
     </message>
     <message>
         <location filename="QML/CalibrationPart.qml" line="1288"/>
@@ -112,91 +142,92 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1511"/>
+        <location filename="QML/CalibrationPart.qml" line="1346"/>
+        <source>Y=ax+b</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="QML/CalibrationPart.qml" line="1402"/>
         <source>Calibration temperature</source>
         <translation>Température de calibration</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1596"/>
+        <location filename="QML/CalibrationPart.qml" line="1487"/>
         <source>Submit</source>
         <translation>Valider</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1632"/>
+        <location filename="QML/CalibrationPart.qml" line="1522"/>
         <source>Invalid character submit</source>
         <oldsource>Invalid caracter submit</oldsource>
         <translation>Caractère invalide</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1641"/>
+        <location filename="QML/CalibrationPart.qml" line="1531"/>
         <source>Unit must be shorter than 15 characters</source>
         <oldsource>Unit must be shorter than 15 caracters</oldsource>
         <translation>L&apos;unité doit contenir moins de 15 caractères</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1688"/>
+        <location filename="QML/CalibrationPart.qml" line="1578"/>
         <source>Value must be between 1 and 1000</source>
         <translation>La valeur doit être entre 1 et 1000</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1700"/>
+        <location filename="QML/CalibrationPart.qml" line="1590"/>
         <source>Value must be an integer</source>
         <translation>La valeur doit être un entier</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1726"/>
+        <location filename="QML/CalibrationPart.qml" line="1616"/>
         <source>Value must be between 0 and 50</source>
         <translation>La valeur doit être entre 0 et 50</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1735"/>
+        <location filename="QML/CalibrationPart.qml" line="1625"/>
         <source>Value is not a valid float number.</source>
         <translation>La valeur n&apos;est pas un chiffre à virgule.</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1748"/>
+        <location filename="QML/CalibrationPart.qml" line="1638"/>
         <source>Please enter a value with a maximum of 2 decimal places</source>
         <translation>Valeur avec maximum deux chiffres après la virgule</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1867"/>
         <source>Calibration info</source>
-        <translation>Info de calibration</translation>
+        <translation type="vanished">Info de calibration</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1924"/>
         <source>Formula</source>
-        <translation>Formule</translation>
+        <translation type="vanished">Formule</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="1952"/>
         <source>No calibration with current settings</source>
-        <translation>Pas de calibration avec les paramètres actuels</translation>
+        <translation type="vanished">Pas de calibration avec les paramètres actuels</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="2005"/>
         <source>Calibration date</source>
-        <translation>Date de calibration</translation>
+        <translation type="vanished">Date de calibration</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="2113"/>
-        <location filename="QML/CalibrationPart.qml" line="2228"/>
-        <location filename="QML/CalibrationPart.qml" line="2234"/>
+        <location filename="QML/CalibrationPart.qml" line="1889"/>
+        <location filename="QML/CalibrationPart.qml" line="2003"/>
+        <location filename="QML/CalibrationPart.qml" line="2009"/>
         <source>Export to pdf</source>
         <translation>Export en pdf</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="2148"/>
+        <location filename="QML/CalibrationPart.qml" line="1923"/>
         <source>Save calibration report</source>
         <translation>Exporter rapport de calibration</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="2229"/>
+        <location filename="QML/CalibrationPart.qml" line="2004"/>
         <source>Calibration report saved</source>
         <translation>Rapport de calibration sauvegardé</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPart.qml" line="2235"/>
+        <location filename="QML/CalibrationPart.qml" line="2010"/>
         <source>Calibration report export error</source>
         <translation>Erreur d&apos;export du rapport de calibration</translation>
     </message>
@@ -204,39 +235,48 @@
 <context>
     <name>CalibrationPointPart</name>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="93"/>
+        <location filename="QML/CalibrationPointPart.qml" line="91"/>
         <source>Calibration points</source>
         <translation>Points de calibration</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="126"/>
+        <location filename="QML/CalibrationPointPart.qml" line="124"/>
         <source>Error: maximum point number reached</source>
         <translation>Erreur : nombre maximum de points de calibration atteint</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="143"/>
+        <location filename="QML/CalibrationPointPart.qml" line="141"/>
         <source>Add point</source>
         <translation>Ajouter point</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="172"/>
+        <location filename="QML/CalibrationPointPart.qml" line="170"/>
         <source>Modify selected point</source>
         <translation>Modifier point sélectionné</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="194"/>
+        <location filename="QML/CalibrationPointPart.qml" line="192"/>
         <source>Delete selected point</source>
         <translation>Supprimer point sélectionné</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="269"/>
+        <location filename="QML/CalibrationPointPart.qml" line="267"/>
         <source>Delete all points</source>
         <translation>Supprimer tous les points</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="317"/>
+        <location filename="QML/CalibrationPointPart.qml" line="315"/>
+        <source>Standard</source>
+        <translation>Etalon</translation>
+    </message>
+    <message>
+        <location filename="QML/CalibrationPointPart.qml" line="355"/>
+        <source>Measured</source>
+        <translation>Mesure</translation>
+    </message>
+    <message>
         <source>Physical</source>
-        <translation>Physique</translation>
+        <translation type="vanished">Physique</translation>
     </message>
     <message>
         <location filename="QML/CalibrationPointPart.qml" line="335"/>
@@ -244,38 +284,41 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="354"/>
         <source>Corrected</source>
-        <translation>Corrigée</translation>
+        <translation type="vanished">Corrigée</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="354"/>
         <source>Raw</source>
-        <translation>Brut</translation>
+        <translation type="vanished">Brut</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="390"/>
+        <location filename="QML/CalibrationPointPart.qml" line="391"/>
         <source>Submit</source>
         <translation>Valider</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="504"/>
-        <location filename="QML/CalibrationPointPart.qml" line="509"/>
+        <location filename="QML/CalibrationPointPart.qml" line="505"/>
+        <source>0 is forbidden for nitrate sensor</source>
+        <translation>0 est interdit pour le capteur de nitrate</translation>
+    </message>
+    <message>
+        <location filename="QML/CalibrationPointPart.qml" line="513"/>
+        <location filename="QML/CalibrationPointPart.qml" line="518"/>
         <source>Please enter a valid value</source>
         <translation>Entrer une valeur valide</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="530"/>
+        <location filename="QML/CalibrationPointPart.qml" line="539"/>
         <source>Please enter a value with a maximum of 3 decimal places</source>
         <translation>Valeur avec maximum trois chiffres après la virgule</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="543"/>
+        <location filename="QML/CalibrationPointPart.qml" line="552"/>
         <source>Value must be between -100000 and 100000</source>
         <translation>La valeur doit être comprise entre -100000 et 100000</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="553"/>
+        <location filename="QML/CalibrationPointPart.qml" line="562"/>
         <source>Value must be between -6000 and 6000</source>
         <translation>La valeur doit être comprise entre -6000 et 6000</translation>
     </message>
@@ -288,110 +331,100 @@
         <translation type="vanished">La valeur doit être entre 0 et 262143</translation>
     </message>
     <message>
-        <location filename="QML/CalibrationPointPart.qml" line="600"/>
-        <location filename="QML/CalibrationPointPart.qml" line="603"/>
-        <location filename="QML/CalibrationPointPart.qml" line="614"/>
+        <location filename="QML/CalibrationPointPart.qml" line="617"/>
         <location filename="QML/CalibrationPointPart.qml" line="620"/>
+        <location filename="QML/CalibrationPointPart.qml" line="631"/>
+        <location filename="QML/CalibrationPointPart.qml" line="637"/>
         <source>The point already exists</source>
         <translation>Le point existe déjà</translation>
     </message>
 </context>
 <context>
+    <name>CalibrationSelectionBloc</name>
+    <message>
+        <location filename="QML/Component/CalibrationSelectionBloc.qml" line="84"/>
+        <source>Channel</source>
+        <translation>Voie de mesure</translation>
+    </message>
+</context>
+<context>
     <name>DashBoardPart</name>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="232"/>
         <source>Dashboard</source>
-        <translation>Accueil</translation>
+        <translation type="vanished">Accueil</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="293"/>
         <source>Sensor detection</source>
-        <translation>Détection capteur</translation>
+        <translation type="vanished">Détection capteur</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="339"/>
         <source>Serial port</source>
-        <translation>Port série</translation>
+        <translation type="vanished">Port série</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="430"/>
         <source>Bus connexion</source>
-        <translation>Connexion interface</translation>
+        <translation type="vanished">Connexion interface</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="464"/>
         <source>Refresh</source>
-        <translation>Rafraîchir</translation>
+        <translation type="vanished">Rafraîchir</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="640"/>
         <source>Change interface...</source>
-        <translation>Changer d&apos;interface...</translation>
+        <translation type="vanished">Changer d&apos;interface...</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="709"/>
         <source>Information</source>
-        <translation>Informations capteur</translation>
+        <translation type="vanished">Informations capteur</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="756"/>
         <source>Identifier</source>
-        <translation>Identifiant</translation>
+        <translation type="vanished">Identifiant</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="832"/>
         <source>Channels</source>
-        <translation>Voies de mesure</translation>
+        <translation type="vanished">Voies de mesure</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="898"/>
         <source>Manufacturer</source>
-        <translation>Fabricant</translation>
+        <translation type="vanished">Fabricant</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="974"/>
         <source>Serial number</source>
-        <translation>Numéro de série</translation>
+        <translation type="vanished">Numéro de série</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="1050"/>
         <source>Firmware version</source>
-        <translation>Version logiciel</translation>
+        <translation type="vanished">Version logiciel</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="1147"/>
         <source>License</source>
         <oldsource>Licence</oldsource>
-        <translation>Licence</translation>
+        <translation type="vanished">Licence</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="1163"/>
         <source>details</source>
-        <translation>détails</translation>
+        <translation type="vanished">détails</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="1181"/>
-        <location filename="QML/DashBoardPart.qml" line="1258"/>
         <source>Open</source>
-        <translation>Ouvrir</translation>
+        <translation type="vanished">Ouvrir</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="1224"/>
         <source>Help</source>
-        <translation>Aide</translation>
+        <translation type="vanished">Aide</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="1240"/>
         <source>online support</source>
-        <translation>en ligne</translation>
+        <translation type="vanished">en ligne</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="1293"/>
+        <location filename="QML/DashBoardPart.qml" line="321"/>
         <source>Password online support</source>
         <translation>Mot de passe support en ligne</translation>
     </message>
     <message>
-        <location filename="QML/DashBoardPart.qml" line="1294"/>
+        <location filename="QML/DashBoardPart.qml" line="322"/>
         <source>Password: NkeSupport56$</source>
         <translation>Mot de passe : NkeSupport56$</translation>
     </message>
@@ -399,105 +432,98 @@
 <context>
     <name>FactoryPart</name>
     <message>
-        <location filename="QML/FactoryPart.qml" line="360"/>
         <source>Factory</source>
-        <translation>Usine</translation>
+        <translation type="vanished">Usine</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="421"/>
         <source>WiMo sensor software</source>
-        <translation>Logiciel capteur WiMo</translation>
+        <translation type="vanished">Logiciel capteur WiMo</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="473"/>
-        <location filename="QML/FactoryPart.qml" line="868"/>
+        <location filename="QML/FactoryPart.qml" line="449"/>
         <source>Update</source>
         <translation>Mise à jour</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="515"/>
-        <location filename="QML/FactoryPart.qml" line="911"/>
+        <location filename="QML/FactoryPart.qml" line="492"/>
         <source>Check for update</source>
         <translation>Rechercher mise à jour</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="239"/>
+        <location filename="QML/FactoryPart.qml" line="202"/>
         <source>Update success</source>
         <translation>Mise à jour terminée</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="240"/>
+        <location filename="QML/FactoryPart.qml" line="203"/>
         <source>Sensor update finished successfully</source>
         <translation>Mise à jour capteur valide</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="244"/>
+        <location filename="QML/FactoryPart.qml" line="207"/>
         <source>Reset success</source>
         <translation>Redémarrage terminée</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="245"/>
+        <location filename="QML/FactoryPart.qml" line="208"/>
         <source>Sensor reset finished successfully</source>
         <translation>Redémarrage capteur terminée</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="564"/>
-        <location filename="QML/FactoryPart.qml" line="960"/>
+        <location filename="QML/FactoryPart.qml" line="541"/>
         <source>Open file...</source>
         <translation>Ouvrir fichier...</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="615"/>
         <source>Reset</source>
-        <translation>Redémarrer</translation>
+        <translation type="vanished">Redémarrer</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="657"/>
         <source>Trigger</source>
-        <translation>Lancer</translation>
+        <translation type="vanished">Lancer</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="815"/>
+        <location filename="QML/FactoryPart.qml" line="396"/>
         <source>USB tool software</source>
         <translation>Logiciel outil USB</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1011"/>
+        <location filename="QML/FactoryPart.qml" line="592"/>
         <source>Version</source>
         <translation>Version</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1056"/>
+        <location filename="QML/FactoryPart.qml" line="637"/>
         <source>Refresh</source>
         <translation>Rafraîchir</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1119"/>
+        <location filename="QML/FactoryPart.qml" line="1070"/>
         <source>Configuration</source>
         <translation>Configuration</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1171"/>
+        <location filename="QML/FactoryPart.qml" line="1121"/>
         <source>Config</source>
         <translation>Config</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1192"/>
+        <location filename="QML/FactoryPart.qml" line="1142"/>
         <source>Export config</source>
         <translation>Exporter config</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1219"/>
+        <location filename="QML/FactoryPart.qml" line="1169"/>
         <source>Write config</source>
         <translation>Ecrire config</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1279"/>
+        <location filename="QML/FactoryPart.qml" line="1229"/>
         <source>Sensor parameters</source>
         <translation>Paramètres capteurs</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1326"/>
+        <location filename="QML/FactoryPart.qml" line="1276"/>
         <source>Serial number</source>
         <translation>Numéro de série</translation>
     </message>
@@ -507,261 +533,289 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1357"/>
-        <location filename="QML/FactoryPart.qml" line="1401"/>
-        <location filename="QML/FactoryPart.qml" line="1489"/>
-        <location filename="QML/FactoryPart.qml" line="1578"/>
-        <location filename="QML/FactoryPart.qml" line="1667"/>
+        <location filename="QML/FactoryPart.qml" line="1303"/>
+        <location filename="QML/FactoryPart.qml" line="1343"/>
+        <location filename="QML/FactoryPart.qml" line="1431"/>
+        <location filename="QML/FactoryPart.qml" line="1520"/>
+        <location filename="QML/FactoryPart.qml" line="1609"/>
         <source>InvalidValue</source>
         <translation>Valeur invalide</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1375"/>
+        <location filename="QML/FactoryPart.qml" line="1321"/>
         <source> - </source>
         <translation> - </translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1462"/>
+        <location filename="QML/FactoryPart.qml" line="1404"/>
         <source>Integration time</source>
         <translation>Temps d&apos;intégration</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1551"/>
+        <location filename="QML/FactoryPart.qml" line="1493"/>
         <source>Range</source>
         <translation>Gamme</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1640"/>
+        <location filename="QML/FactoryPart.qml" line="1582"/>
         <source>Average sample</source>
         <translation>Moyennage</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1707"/>
+        <location filename="QML/FactoryPart.qml" line="1781"/>
         <source>Submit</source>
         <translation>Soumettre</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1742"/>
         <source>Value must be between 19 and 255</source>
-        <translation>La valeur doit être entre 19 et 255</translation>
+        <translation type="vanished">La valeur doit être entre 19 et 255</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1752"/>
-        <location filename="QML/FactoryPart.qml" line="1834"/>
-        <location filename="QML/FactoryPart.qml" line="1854"/>
+        <location filename="QML/FactoryPart.qml" line="1817"/>
+        <location filename="QML/FactoryPart.qml" line="1909"/>
+        <location filename="QML/FactoryPart.qml" line="1929"/>
         <source>Value must be between 0 and 65535</source>
         <translation>La valeur doit être entre 0 et 65535</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1766"/>
-        <location filename="QML/FactoryPart.qml" line="1775"/>
-        <location filename="QML/FactoryPart.qml" line="1800"/>
-        <location filename="QML/FactoryPart.qml" line="1808"/>
-        <location filename="QML/FactoryPart.qml" line="1816"/>
+        <location filename="QML/FactoryPart.qml" line="1831"/>
+        <location filename="QML/FactoryPart.qml" line="1840"/>
+        <location filename="QML/FactoryPart.qml" line="1875"/>
+        <location filename="QML/FactoryPart.qml" line="1883"/>
+        <location filename="QML/FactoryPart.qml" line="1891"/>
         <source>Value must be an integer</source>
         <translation>La valeur doit être un entier</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1844"/>
+        <location filename="QML/FactoryPart.qml" line="1807"/>
+        <location filename="QML/FactoryPart.qml" line="1919"/>
         <source>Value must be between 0 and 255</source>
         <translation>La valeur doit être entre 0 et 255</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1911"/>
-        <location filename="QML/FactoryPart.qml" line="1942"/>
+        <location filename="QML/FactoryPart.qml" line="1672"/>
+        <source>Compensation T°</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="QML/FactoryPart.qml" line="1698"/>
+        <source>T²+</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="QML/FactoryPart.qml" line="1719"/>
+        <source>T+</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="QML/FactoryPart.qml" line="1745"/>
+        <source>Raw20=</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="QML/FactoryPart.qml" line="1983"/>
+        <location filename="QML/FactoryPart.qml" line="2011"/>
         <source>Open update file</source>
         <translation>Ouvrir fichier de mise à jour</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1963"/>
+        <location filename="QML/FactoryPart.qml" line="2038"/>
         <source>Open config file</source>
         <translation>Ouvrir fichier de config</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1985"/>
+        <location filename="QML/FactoryPart.qml" line="2060"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1986"/>
+        <location filename="QML/FactoryPart.qml" line="2061"/>
         <source>An error occured</source>
         <translation>Une erreur s&apos;est produite</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1991"/>
+        <location filename="QML/FactoryPart.qml" line="2066"/>
         <source>Save config</source>
         <translation>Sauvegarder config</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1992"/>
+        <location filename="QML/FactoryPart.qml" line="2067"/>
         <source>Save config success</source>
         <translation>Config sauvegardée</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1997"/>
-        <location filename="QML/FactoryPart.qml" line="2003"/>
+        <location filename="QML/FactoryPart.qml" line="2072"/>
+        <location filename="QML/FactoryPart.qml" line="2078"/>
         <source>Update interface</source>
         <translation>Mise à jour interface</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="1998"/>
+        <location filename="QML/FactoryPart.qml" line="2073"/>
         <source>Update interface success</source>
         <translation>Mise à jour terminée</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="2004"/>
+        <location filename="QML/FactoryPart.qml" line="2079"/>
         <source>Update interface error</source>
         <translation>Erreur mise à jour</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="2009"/>
+        <location filename="QML/FactoryPart.qml" line="2084"/>
         <source>Refresh interface version</source>
         <translation>Rafraîchir numéro de version</translation>
     </message>
     <message>
-        <location filename="QML/FactoryPart.qml" line="2010"/>
+        <location filename="QML/FactoryPart.qml" line="2085"/>
         <source>Refresh interface version error</source>
         <translation>Erreur mise à jour numéro de version</translation>
+    </message>
+    <message>
+        <location filename="QML/FactoryPart.qml" line="2090"/>
+        <source>Interface update error</source>
+        <translation>Mise à jour inteface erreur</translation>
+    </message>
+    <message>
+        <location filename="QML/FactoryPart.qml" line="2091"/>
+        <source>Invalid file selected</source>
+        <translation>Fichier sélectionné invalide</translation>
     </message>
 </context>
 <context>
     <name>LiveViewConfig</name>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="249"/>
         <source>Live view advanced settings</source>
-        <translation>Paramètres avancés de mesure</translation>
+        <translation type="vanished">Paramètres avancés de mesure</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="318"/>
+        <location filename="QML/LiveViewConfig.qml" line="317"/>
         <source>Acquisition settings</source>
         <translation>Paramètres d&apos;acquisition</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="362"/>
+        <location filename="QML/LiveViewConfig.qml" line="361"/>
         <source>Measurement period</source>
         <translation>Période de mesure</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="401"/>
+        <location filename="QML/LiveViewConfig.qml" line="391"/>
         <source>seconds</source>
         <translation>secondes</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="445"/>
+        <location filename="QML/LiveViewConfig.qml" line="435"/>
         <source>Graphical depth</source>
         <translation>Profondeur d&apos;affichage</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="489"/>
-        <location filename="QML/LiveViewConfig.qml" line="1152"/>
+        <location filename="QML/LiveViewConfig.qml" line="479"/>
+        <location filename="QML/LiveViewConfig.qml" line="1142"/>
         <source>Submit</source>
         <translation>Valider</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="594"/>
+        <location filename="QML/LiveViewConfig.qml" line="584"/>
         <source>Working channel selection</source>
         <translation>Voie de mesure de travail</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="641"/>
+        <location filename="QML/LiveViewConfig.qml" line="631"/>
         <source>Used channel</source>
         <translation>Voie de mesure utilisée</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="712"/>
-        <location filename="QML/LiveViewConfig.qml" line="757"/>
+        <location filename="QML/LiveViewConfig.qml" line="702"/>
+        <location filename="QML/LiveViewConfig.qml" line="747"/>
         <source>Average calculation</source>
         <translation>Calcul moyenne</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="783"/>
+        <location filename="QML/LiveViewConfig.qml" line="773"/>
         <source>Start</source>
         <translation>Démarrer</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="807"/>
+        <location filename="QML/LiveViewConfig.qml" line="797"/>
         <source>Stop</source>
         <translation>Arrêter</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="861"/>
+        <location filename="QML/LiveViewConfig.qml" line="851"/>
         <source>Result</source>
         <translation>Résultat</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="887"/>
+        <location filename="QML/LiveViewConfig.qml" line="877"/>
         <source>--</source>
         <translation>--</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="952"/>
+        <location filename="QML/LiveViewConfig.qml" line="942"/>
         <source>Add to calibration point</source>
         <translation>Ajouter aux points de calibration</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="995"/>
+        <location filename="QML/LiveViewConfig.qml" line="985"/>
         <source>Physical</source>
         <translation>Physique</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="1017"/>
-        <location filename="QML/LiveViewConfig.qml" line="1100"/>
+        <location filename="QML/LiveViewConfig.qml" line="1007"/>
+        <location filename="QML/LiveViewConfig.qml" line="1090"/>
         <source>InvalidValue</source>
         <translation>Valeur invalide</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="1077"/>
+        <location filename="QML/LiveViewConfig.qml" line="1067"/>
         <source>Raw</source>
         <translation>Brut</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="1185"/>
+        <location filename="QML/LiveViewConfig.qml" line="1175"/>
         <source>Please enter a value with a maximum of 3 decimal places</source>
         <translation>Valeur avec maximum trois chiffres après la virgule</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="1195"/>
+        <location filename="QML/LiveViewConfig.qml" line="1185"/>
         <source>Value must be between -6000 and 6000</source>
         <translation>La valeur doit être comprise entre -6000 et 6000</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="1208"/>
+        <location filename="QML/LiveViewConfig.qml" line="1198"/>
         <source>Please enter a value with a maximum of 1 decimal places</source>
         <translation>Valeur avec maximum un chiffre après la virgule</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="1218"/>
+        <location filename="QML/LiveViewConfig.qml" line="1208"/>
         <source>Value must be between 0 and 262143</source>
         <translation>La valeur doit être entre 0 et 262143</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="1230"/>
-        <location filename="QML/LiveViewConfig.qml" line="1237"/>
+        <location filename="QML/LiveViewConfig.qml" line="1220"/>
+        <location filename="QML/LiveViewConfig.qml" line="1227"/>
         <source>The point already exists</source>
         <translation>Le point existe déjà</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="1249"/>
+        <location filename="QML/LiveViewConfig.qml" line="1239"/>
         <source>Max calibration point number reached</source>
         <translation>Nombre maximum de point atteind</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="1390"/>
         <source>Return</source>
-        <translation>Retour</translation>
+        <translation type="vanished">Retour</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="1419"/>
+        <location filename="QML/LiveViewConfig.qml" line="1336"/>
         <source>Stop average</source>
         <translation>Arrêter moyenne</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="1421"/>
+        <location filename="QML/LiveViewConfig.qml" line="1338"/>
         <source>Would you like to add current calibration point ?</source>
         <translation>Voulez-vous ajouter le point de calibration ?</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewConfig.qml" line="1422"/>
+        <location filename="QML/LiveViewConfig.qml" line="1339"/>
         <source>(mesure will be stopped)</source>
         <translation>(La mesure sera stoppée)</translation>
     </message>
@@ -769,42 +823,40 @@
 <context>
     <name>LiveViewPart</name>
     <message>
-        <location filename="QML/LiveViewPart.qml" line="307"/>
         <source>Live view</source>
-        <translation>Mesure</translation>
+        <translation type="vanished">Mesure</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewPart.qml" line="392"/>
         <source>Advanced settings</source>
-        <translation>Paramètres avancées</translation>
+        <translation type="vanished">Paramètres avancées</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewPart.qml" line="980"/>
+        <location filename="QML/LiveViewPart.qml" line="336"/>
         <source>Extend</source>
         <translation>Etendre</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewPart.qml" line="999"/>
+        <location filename="QML/LiveViewPart.qml" line="355"/>
         <source>Clear</source>
         <translation>Effacer</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewPart.qml" line="1017"/>
+        <location filename="QML/LiveViewPart.qml" line="373"/>
         <source>Export</source>
         <translation>Exporter</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewPart.qml" line="1038"/>
+        <location filename="QML/LiveViewPart.qml" line="394"/>
         <source>Record Measurement</source>
         <translation>Enregistrer mesure</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewPart.qml" line="1047"/>
+        <location filename="QML/LiveViewPart.qml" line="403"/>
         <source>Location...</source>
         <translation>Emplacement...</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewPart.qml" line="1071"/>
+        <location filename="QML/LiveViewPart.qml" line="427"/>
         <source>Measure recording location</source>
         <translation>Emplacement d&apos;enregistrement</translation>
     </message>
@@ -813,9 +865,25 @@
         <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="QML/LiveViewPart.qml" line="1083"/>
+        <location filename="QML/LiveViewPart.qml" line="442"/>
         <source>On/off</source>
         <translation>On/off</translation>
+    </message>
+</context>
+<context>
+    <name>LiveviewASButtonReturn</name>
+    <message>
+        <location filename="QML/Component/LiveviewASButtonReturn.qml" line="54"/>
+        <source>Return</source>
+        <translation>Retour</translation>
+    </message>
+</context>
+<context>
+    <name>LiveviewButtonAdvancedPanel</name>
+    <message>
+        <location filename="QML/Component/LiveviewButtonAdvancedPanel.qml" line="56"/>
+        <source>Advanced settings</source>
+        <translation>Paramètres avancées</translation>
     </message>
 </context>
 <context>
@@ -950,8 +1018,9 @@ Sinon, la valeur d&apos;oxygène sera déterminé à partir d&apos;une valeur fi
     </message>
     <message>
         <location filename="QML/O2Part.qml" line="621"/>
-        <source>Dissolved oxygen value will be determined for a fixed athmospheric pressure entered by the user: &quot;Athmospheric pressure&quot; field.</source>
-        <translation>La valeur d&apos;oxygène dépend  d&apos;une valeur fixée de pression défini par l&apos;utilisateur : champ &quot;Pression athmosphérique&quot;.</translation>
+        <source>Dissolved oxygen value will be determined for a fixed atmospheric pressure entered by the user: &quot;Atmospheric pressure&quot; field.</source>
+        <oldsource>Dissolved oxygen value will be determined for a fixed athmospheric pressure entered by the user: &quot;Athmospheric pressure&quot; field.</oldsource>
+        <translation>La valeur d&apos;oxygène dépend  d&apos;une valeur fixée de pression défini par l&apos;utilisateur : champ &quot;Pression atmosphérique&quot;.</translation>
     </message>
     <message>
         <source>O2 sensor temperature</source>
@@ -1297,17 +1366,41 @@ Sinon, la valeur d&apos;oxygène sera déterminé à partir d&apos;une valeur fi
 <context>
     <name>QObject</name>
     <message>
-        <location filename="WIMO/WIMOClientModbus.cpp" line="566"/>
-        <location filename="WIMO/WIMOClientModbus.cpp" line="573"/>
-        <location filename="WIMO/WIMOClientModbus.cpp" line="615"/>
-        <location filename="WIMO/WIMOClientModbus.cpp" line="622"/>
+        <location filename="WIMO/WIMOClientModbus.cpp" line="568"/>
+        <location filename="WIMO/WIMOClientModbus.cpp" line="575"/>
+        <location filename="WIMO/WIMOClientModbus.cpp" line="617"/>
+        <location filename="WIMO/WIMOClientModbus.cpp" line="624"/>
         <source>No formula with current settings</source>
         <translation>Pas de formule avec paramètres actuels</translation>
     </message>
     <message>
-        <location filename="WIMO/WIMOClientModbus.cpp" line="803"/>
+        <location filename="WIMO/WIMOClientModbus.cpp" line="805"/>
         <source>Not calibrated</source>
         <translation>Non calibrée</translation>
+    </message>
+</context>
+<context>
+    <name>RowInputComboBox</name>
+    <message>
+        <location filename="QML/Component/RowInputComboBox.qml" line="110"/>
+        <source>InvalidValue</source>
+        <translation>Valeur invalide</translation>
+    </message>
+</context>
+<context>
+    <name>RowInputText</name>
+    <message>
+        <location filename="QML/Component/RowInputText.qml" line="103"/>
+        <source>InvalidValue</source>
+        <translation>Valeur invalide</translation>
+    </message>
+</context>
+<context>
+    <name>RowSNInputText</name>
+    <message>
+        <location filename="QML/Component/RowSNInputText.qml" line="122"/>
+        <source> - </source>
+        <translation> - </translation>
     </message>
 </context>
 <context>
@@ -1401,62 +1494,62 @@ Sinon, la valeur d&apos;oxygène sera déterminé à partir d&apos;une valeur fi
 <context>
     <name>WindowsInterfaceUpdate</name>
     <message>
-        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="95"/>
+        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="96"/>
         <source>Interface update detected</source>
         <translation>Mise à jour interface détectée</translation>
     </message>
     <message>
-        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="134"/>
+        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="135"/>
         <source>Interface info:</source>
         <translation>Info interface :</translation>
     </message>
     <message>
-        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="167"/>
+        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="168"/>
         <source>Update info:</source>
         <translation>Info mise à jour :</translation>
     </message>
     <message>
-        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="200"/>
+        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="201"/>
         <source>Status:</source>
         <translation>Statut :</translation>
     </message>
     <message>
-        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="215"/>
+        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="216"/>
         <source>Ready</source>
         <translation>Prêt</translation>
     </message>
     <message>
-        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="215"/>
+        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="216"/>
         <source>Downloading...</source>
         <translation>En téléchargement...</translation>
     </message>
     <message>
-        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="215"/>
+        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="216"/>
         <source>Updating...</source>
         <translation>Mise à jour en cours...</translation>
     </message>
     <message>
-        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="215"/>
+        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="216"/>
         <source>Finished</source>
         <translation>Terminée</translation>
     </message>
     <message>
-        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="235"/>
+        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="236"/>
         <source>Download</source>
         <translation>Télechargement</translation>
     </message>
     <message>
-        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="271"/>
+        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="272"/>
         <source>Update interface</source>
         <translation>Mise à jour interface</translation>
     </message>
     <message>
-        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="311"/>
+        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="312"/>
         <source>Start</source>
         <translation>Démarer</translation>
     </message>
     <message>
-        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="330"/>
+        <location filename="QML/Windows/WindowsInterfaceUpdate.qml" line="331"/>
         <source>Skip</source>
         <translation>Passer</translation>
     </message>
@@ -1601,27 +1694,27 @@ Sinon, la valeur d&apos;oxygène sera déterminé à partir d&apos;une valeur fi
     </message>
     <message>
         <location filename="QML/WiperPart.qml" line="667"/>
-        <location filename="QML/WiperPart.qml" line="917"/>
+        <location filename="QML/WiperPart.qml" line="914"/>
         <source>Start</source>
         <translation>Démarrer</translation>
     </message>
     <message>
-        <location filename="QML/WiperPart.qml" line="766"/>
+        <location filename="QML/WiperPart.qml" line="763"/>
         <source>Wiper periodic test</source>
         <translation>Test balai périodique</translation>
     </message>
     <message>
-        <location filename="QML/WiperPart.qml" line="811"/>
+        <location filename="QML/WiperPart.qml" line="808"/>
         <source>Trigger period</source>
         <translation>Période de déclenchement</translation>
     </message>
     <message>
-        <location filename="QML/WiperPart.qml" line="885"/>
+        <location filename="QML/WiperPart.qml" line="882"/>
         <source>Launch test</source>
         <translation>Démarer un test</translation>
     </message>
     <message>
-        <location filename="QML/WiperPart.qml" line="945"/>
+        <location filename="QML/WiperPart.qml" line="942"/>
         <source>Stop</source>
         <translation>Arrêter</translation>
     </message>
@@ -1629,160 +1722,170 @@ Sinon, la valeur d&apos;oxygène sera déterminé à partir d&apos;une valeur fi
 <context>
     <name>main</name>
     <message>
-        <location filename="QML/main.qml" line="158"/>
-        <location filename="QML/main.qml" line="1529"/>
+        <location filename="QML/main.qml" line="274"/>
+        <location filename="QML/main.qml" line="1426"/>
         <source>Warning</source>
         <translation>Avertissement</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="159"/>
+        <location filename="QML/main.qml" line="275"/>
         <source>Warning: the current software is </source>
         <translation>Attention : le logiciel est </translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="160"/>
+        <location filename="QML/main.qml" line="276"/>
         <source>a non-commercial/developpement version</source>
         <translation>dans une version de développement</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="160"/>
+        <location filename="QML/main.qml" line="276"/>
         <source>(cannot be sold)</source>
         <translation>(ne peut être vendu)</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="283"/>
+        <location filename="QML/main.qml" line="105"/>
         <source>error</source>
         <translation>erreur</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="575"/>
+        <location filename="QML/main.qml" line="558"/>
         <source>DASHBOARD</source>
         <translation>ACCUEIL</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="644"/>
+        <location filename="QML/main.qml" line="626"/>
         <source>LIVE VIEW</source>
         <translation>MESURE</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="709"/>
+        <location filename="QML/main.qml" line="691"/>
         <source>T° CALIBRATION</source>
         <translation>CALIBRATION T°</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="709"/>
+        <location filename="QML/main.qml" line="691"/>
         <source>CALIBRATION</source>
         <translation>CALIBRATION</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="764"/>
+        <location filename="QML/main.qml" line="746"/>
         <source>FACTORY</source>
         <translation>USINE</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="850"/>
+        <location filename="QML/main.qml" line="833"/>
         <source>WIPER</source>
         <translation>BALAI</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="915"/>
+        <location filename="QML/main.qml" line="898"/>
         <source>O2 CALIBRATION</source>
         <translation>CALIBRATION O2</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1512"/>
+        <location filename="QML/main.qml" line="1400"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1514"/>
+        <location filename="QML/main.qml" line="1402"/>
         <source>Communication error</source>
         <translation>Erreur de communication</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1531"/>
+        <location filename="QML/main.qml" line="1416"/>
+        <source>Info</source>
+        <translation>Info</translation>
+    </message>
+    <message>
+        <location filename="QML/main.qml" line="1417"/>
+        <source>Information</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="QML/main.qml" line="1428"/>
         <source>Please stop measure to change page</source>
         <translation>Arrêter la mesure pour changer de page</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1545"/>
+        <location filename="QML/main.qml" line="1442"/>
         <source>Update</source>
         <translation>Mise à jour</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1547"/>
+        <location filename="QML/main.qml" line="1444"/>
         <source>New update detected</source>
         <translation>Mise à jour détectée</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1548"/>
+        <location filename="QML/main.qml" line="1445"/>
         <source>Do you want to update now ?</source>
         <translation>Voulez-vous mettre à jour ?</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1602"/>
-        <location filename="QML/main.qml" line="1614"/>
+        <location filename="QML/main.qml" line="1499"/>
+        <location filename="QML/main.qml" line="1511"/>
         <source>Sensor update</source>
         <translation>Mise à jour capteur</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1603"/>
+        <location filename="QML/main.qml" line="1500"/>
         <source>The sensor already has the latest update.</source>
         <translation>Le capteur a déjà la dernière version.</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1608"/>
-        <location filename="QML/main.qml" line="1623"/>
+        <location filename="QML/main.qml" line="1505"/>
+        <location filename="QML/main.qml" line="1520"/>
         <source>Interface update</source>
         <translation>Mise à jour outil USB</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1609"/>
+        <location filename="QML/main.qml" line="1506"/>
         <source>The interface already has the latest update.</source>
         <translation>L&apos;interface est déjà à jour.</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1615"/>
+        <location filename="QML/main.qml" line="1512"/>
         <source>Sensor updated succefully.</source>
         <translation>Mise à jour terminée.</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1624"/>
+        <location filename="QML/main.qml" line="1521"/>
         <source>Interface updated succefully.</source>
         <translation>Mise à jour terminée.</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1631"/>
+        <location filename="QML/main.qml" line="1528"/>
         <source>Sensor</source>
         <translation>Capteur</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1631"/>
+        <location filename="QML/main.qml" line="1528"/>
         <source>Interface</source>
         <translation>Outil usb</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1631"/>
+        <location filename="QML/main.qml" line="1528"/>
         <source> update</source>
         <translation>mise à jour</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1632"/>
+        <location filename="QML/main.qml" line="1529"/>
         <source>Update </source>
         <translation>Mise à jour</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1632"/>
+        <location filename="QML/main.qml" line="1529"/>
         <source>sensor</source>
         <translation>capteur</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1632"/>
+        <location filename="QML/main.qml" line="1529"/>
         <source>interface</source>
         <translation>outil usb</translation>
     </message>
     <message>
-        <location filename="QML/main.qml" line="1632"/>
+        <location filename="QML/main.qml" line="1529"/>
         <source> error</source>
         <translation>erreur</translation>
     </message>

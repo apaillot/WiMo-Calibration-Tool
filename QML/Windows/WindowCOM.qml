@@ -10,7 +10,7 @@ import "../"
 Window {
     id: windowCOM
     visible: true
-    width: 200
+    width: 250
     height: 120
 
     maximumHeight: height
@@ -131,7 +131,7 @@ Window {
         id: inputSelectPortCom
         visible:bAuto
         y: 37
-        width: 120
+        width: 180
         height: 30
         anchors.left: parent.left
         anchors.leftMargin: 15
@@ -214,7 +214,7 @@ Window {
         id: btnGoToManualPortCOM
         visible:bAuto
         y: 79
-        width: 75
+        width: 100
         height: 28
         text: qsTr("Manual...")
         anchors.left: inputSelectPortCom.left
@@ -233,7 +233,7 @@ Window {
         id: btnConfirmPortCOM
         visible:bAuto
         x: 106
-        width: 75
+        width: 100
         height: 28
         text: qsTr("Submit")
         anchors.top: btnGoToManualPortCOM.top
@@ -293,7 +293,7 @@ Window {
         visible:!bAuto
         x: 81
         y: 37
-        width: 72
+        width: 100
         height: 30
         //width: parent.width / 3 - 5
         text: qsTr("")

@@ -619,7 +619,7 @@ Item {
                                 id: fixedPressureExplanationText
                                 color: "#545454"
                                 text: qsTr("Dissolved oxygen value will be determined for a fixed"
-                                        +" athmospheric pressure entered by the user: \"Athmospheric pressure\" field.")
+                                        +" atmospheric pressure entered by the user: \"Atmospheric pressure\" field.")
                                 anchors.verticalCenter: parent.verticalCenter
                                 anchors.left: parent.left
                                 anchors.right: parent.right
@@ -3254,7 +3254,7 @@ Item {
                                 /*
                                 Text {
                                     id: airCalibExplanationText
-                                    text: qsTr("Calibration 100% point is determined for a fixed athmospheric pressure entered by the user.")
+                                    text: qsTr("Calibration 100% point is determined for a fixed atmospheric pressure entered by the user.")
                                     //anchors.leftMargin: 20
                                     font.pixelSize: 11
                                     styleColor: "#545454"

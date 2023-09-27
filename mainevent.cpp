@@ -99,6 +99,15 @@ void MainEvent::vFMainWindowErrorOpen( QString sErrorMsg )
 }
 
 //----------------------------------------------------------
+// Ouverture de la fenêtre d'erreur
+//----------------------------------------------------------
+void MainEvent::vFMainWindowInfoOpen( QString sMsg )
+{
+ // Lancement du signal
+ emit mainWindowInfoOpen( sMsg );
+}
+
+//----------------------------------------------------------
 // Ouverture de la fenêtre de détection de mise à jour
 //----------------------------------------------------------
 void MainEvent::vFMainWindowUpdateDetectedOpen( QString sNewVersionNumber )
