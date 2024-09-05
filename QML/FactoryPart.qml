@@ -162,8 +162,10 @@ Item {
         function onConfigSettingsDisplayEvosensSignal( uiSN_Y,
                                                        uiSN_N,
                                                        uiIntegrationTime,
+                                                       uiIntegrationSum,
                                                        ucRange,
-                                                       uiAverageSamples ) {
+                                                       uiAverageSamples,
+                                                       uiTestMode ) {
             console.log("== onConfigSettingsDisplayEvosensSignal ==");
             console.log("uiSN_Y = "+uiSN_Y);
             console.log("uiSN_N = "+uiSN_N);
@@ -172,8 +174,10 @@ Item {
 
             //%%AP - 2020.05.19 -
             inputIntegrationTime.text = uiIntegrationTime
+            inputIntegrationSum.text  = uiIntegrationSum
             inputRange.text = ucRange
-            inputAverageSample.text = uiAverageSamples
+            inputAverageSample.text   = uiAverageSamples
+            inputFluoTbdTestmode.text = uiTestMode
         }
         // Fin de l'enregistrement du numéro de série
         function onEndOfSNSubmitSignal() {
@@ -227,10 +231,11 @@ Item {
                 //
                 if( bEvosensParam ){
                     // Taille de la fenêtre
-                    uiFactoryHeight = 830
-                    updatePartID.height = 900
+                    uiFactoryHeight = 870
+                    updatePartID.height = 940
                     //
-                    paramOpen.height = 278
+                    //paramOpen.height = 278
+                    paramOpen.height = 330
                 }
                 else if( bCTParam ){
                     // Taille de la fenêtre
@@ -321,8 +326,8 @@ Item {
     //==============================================================
     id: updatePartID
     implicitWidth: 662
-    implicitHeight: 830
-    height: 830
+    implicitHeight: 850
+    height: 850
 
     /*
     // Background color
@@ -1207,8 +1212,8 @@ Item {
         Rectangle {
             id: paramOpen
             width: updatePartID.width - 120
-            //height: ( bEvosensParam ) ? 278:85
-            height: 278
+            //height: ( bEvosensParam ) ? 500:278
+            height: 380
             color: "#ffffff"
             anchors.top: configOpen.bottom
             anchors.topMargin: 28
@@ -1464,6 +1469,95 @@ Item {
                     visible: bEvosensParam
                 }
                 //------------------------------
+                // Intégration somme
+                //------------------------------
+                RowLayout {
+                    id: rowIntegrationSum
+                    Layout.preferredWidth: parent.width - 20
+                    Layout.preferredHeight: 30
+                    Layout.leftMargin: 10
+                    width: parent.width - 20
+                    visible: bEvosensParam
+
+                    Rectangle {
+                        id: rowSumTime2
+                        width: ( parent.width - 25 ) / 3
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+                        height: parent.height
+                        Layout.preferredHeight: parent.height
+                        Image{
+                            id: imgIntegrationSum
+                            source: "qrc:/Logo/Calibration/calib-average.png"
+                            width: 30
+                            height: 16
+                            fillMode: Image.PreserveAspectFit
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                        Text {
+                            id: txtIntegrationSum
+                            text: qsTr("Integration sum")
+                            height: parent.height
+                            anchors.left: imgIntegrationSum.right
+                            anchors.leftMargin: 10
+                            anchors.verticalCenter: parent.verticalCenter
+                            verticalAlignment: Text.AlignVCenter
+                            font.family: "open sans"
+                            font.pixelSize: 12
+                            font.weight: Font.DemiBold
+                        }
+                    }
+                    Rectangle {
+                        id: rectangleIntegrationSum4
+                        Layout.preferredHeight: 30
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+
+                        TextField {
+                            id: inputIntegrationSum
+                            width: parent.width
+                            text: qsTr("")
+                            height: 30
+                            activeFocusOnPress: true
+                            selectByMouse: true
+
+                            ToolTip {
+                                id: tooltipIntegrationSum
+                                visible: false
+                                text: qsTr("InvalidValue")
+                                font.weight: Font.Light
+                                font.family: "Open Sans"
+                                opacity: 0.95
+                                enter: Transition {
+                                    NumberAnimation { property: "opacity"; from: 0.0; to: 1 }
+                                }
+                                exit: Transition {
+                                    NumberAnimation { property: "opacity"; from: 1.0; to: 0.0 }
+                                }
+                                background: Rectangle{
+                                    border.color: "#555555"
+                                    color: "white"
+                                }
+                            }
+                        }
+                    }
+                    Rectangle {
+                        id: rectangleIntegrationSumDummy
+                        width: 200
+                        height: 200
+                        color: "#ffffff"
+                        Layout.preferredHeight: parent.height
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+                    }
+                } // RowLayout Integration sum
+                //--- Ligne ---
+                Rectangle {
+                    id: integrationSumLine
+                    width: parent.width
+                    height: 1
+                    color: "#62888888"
+                    Layout.fillWidth: true
+                    visible: bEvosensParam
+                }
+                //------------------------------
                 // Range
                 //------------------------------
                 RowLayout {
@@ -1635,6 +1729,95 @@ Item {
                 //--- Ligne ---
                 Rectangle {
                     id: averageSampleLine
+                    width: parent.width
+                    height: 1
+                    color: "#62888888"
+                    Layout.fillWidth: true
+                    visible: bEvosensParam
+                }
+                //------------------------------
+                // Fluo Tbd Testmode
+                //------------------------------
+                RowLayout {
+                    id: rowFluoTbdTestmode
+                    Layout.preferredWidth: parent.width - 20
+                    Layout.preferredHeight: 30
+                    Layout.leftMargin: 10
+                    width: parent.width - 20
+                    visible: bEvosensParam
+
+                    Rectangle {
+                        id: rowFluoTbdTestmode2
+                        width: ( parent.width - 25 ) / 3
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+                        height: parent.height
+                        Layout.preferredHeight: parent.height
+                        Image{
+                            id: imgFluoTbdTestmode
+                            source: "qrc:/Logo/Calibration/calib-average.png"
+                            width: 30
+                            height: 16
+                            fillMode: Image.PreserveAspectFit
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                        Text {
+                            id: txtFluoTbdTestmode
+                            text: qsTr("Test mode")
+                            height: parent.height
+                            anchors.left: imgFluoTbdTestmode.right
+                            anchors.leftMargin: 10
+                            anchors.verticalCenter: parent.verticalCenter
+                            verticalAlignment: Text.AlignVCenter
+                            font.family: "open sans"
+                            font.pixelSize: 12
+                            font.weight: Font.DemiBold
+                        }
+                    }
+                    Rectangle {
+                        id: rectangleFluoTbdTestmode4
+                        Layout.preferredHeight: 30
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+
+                        TextField {
+                            id: inputFluoTbdTestmode
+                            width: parent.width
+                            text: qsTr("")
+                            height: 30
+                            activeFocusOnPress: true
+                            selectByMouse: true
+
+                            ToolTip {
+                                id: tooltipFluoTbdTestmode
+                                visible: false
+                                text: qsTr("InvalidValue")
+                                font.weight: Font.Light
+                                font.family: "Open Sans"
+                                opacity: 0.95
+                                enter: Transition {
+                                    NumberAnimation { property: "opacity"; from: 0.0; to: 1 }
+                                }
+                                exit: Transition {
+                                    NumberAnimation { property: "opacity"; from: 1.0; to: 0.0 }
+                                }
+                                background: Rectangle{
+                                    border.color: "#555555"
+                                    color: "white"
+                                }
+                            }
+                        }
+                    }
+                    Rectangle {
+                        id: rectangleFluoTbdTestmodeDummy
+                        width: 200
+                        height: 200
+                        color: "#ffffff"
+                        Layout.preferredHeight: parent.height
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+                    }
+                } // RowLayout range
+                //--- Ligne ---
+                Rectangle {
+                    id: fluoTbdTestmodeLine
                     width: parent.width
                     height: 1
                     color: "#62888888"
@@ -1855,17 +2038,23 @@ Item {
                     }
                     // Si c'est un Tbd / Chla_nke / PhycoC_nke / PhycoE_nke / CDOM_nke / Trypto
                     else if( bEvosensParam ){
-                        var fIntegrationTime, fRange, fAverage;
+                        var fIntegrationTime, fRange, fAverage, fIntegrationSum, fTestMode;
                         // Vérification intégration time
                         fIntegrationTime = parseFloat( inputIntegrationTime.text)
+                        // Vérification intégration time
+                        fIntegrationSum = parseFloat( inputIntegrationSum.text)
                         // Vérification range
                         fRange = parseFloat( inputRange.text)
                         // Vérification average
                         fAverage = parseFloat( inputAverageSample.text)
+                        // Vérification test mode
+                        fTestMode = parseFloat( inputFluoTbdTestmode.text)
 
                         var fIntegrationTimeRounded = parseFloat(parseInt(fIntegrationTime));
+                        var fIntegrationSumRounded  = parseFloat(parseInt(fIntegrationSum));
                         var fRangeTimeRounded       = parseFloat(parseInt(fRange));
                         var fAverageRounded         = parseFloat(parseInt(fAverage));
+                        var fTestModeRounded        = parseFloat(parseInt(fTestMode));
                         // Vérification fonctionnement avec un entier
                         if( fIntegrationTime !== fIntegrationTimeRounded )
                         {
@@ -1873,6 +2062,15 @@ Item {
                             busyConfigSettings.visible  = false
                             errorConfigSettings.visible = true
                             inputIntegrationTime.show(qsTr("Value must be an integer"))
+                            return;
+                        }
+                        // Vérification fonctionnement avec un entier
+                        if( fIntegrationSum !== fIntegrationSumRounded )
+                        {
+                            // On désactive l'état occupé
+                            busyConfigSettings.visible  = false
+                            errorConfigSettings.visible = true
+                            inputIntegrationSum.show(qsTr("Value must be an integer"))
                             return;
                         }
                         if( fRange !== fRangeTimeRounded )
@@ -1891,13 +2089,25 @@ Item {
                             tooltipAverageSample.show(qsTr("Value must be an integer"))
                             return;
                         }
+                        if( fTestMode !== fTestModeRounded )
+                        {
+                            // On désactive l'état occupé
+                            busyConfigSettings.visible  = false
+                            errorConfigSettings.visible = true
+                            tooltipAverageSample.show(qsTr("Value must be an integer"))
+                            return;
+                        }
                         var uiIntegrationTimeRounded = parseInt(fIntegrationTime);
+                        var uiIntegrationSumRounded  = parseInt(fIntegrationSum);
                         var uiRangeTimeRounded       = parseInt(fRange);
                         var uiAverageRounded         = parseInt(fAverage);
+                        var uiTestModeRounded        = parseInt(fTestMode);
 
                         console.log( uiIntegrationTimeRounded )
+                        console.log( uiIntegrationSumRounded )
                         console.log( uiRangeTimeRounded )
                         console.log( uiAverageRounded )
+                        console.log( uiTestModeRounded )
 
                         // Test d'intégrité
                         if(  ( uiIntegrationTimeRounded < 0 )
@@ -1907,6 +2117,16 @@ Item {
                             busyConfigSettings.visible  = false
                             errorConfigSettings.visible = true
                             inputIntegrationTime.show(qsTr("Value must be between 0 and 65535"))
+                            return;
+                        }
+                        // Test d'intégrité
+                        if(  ( uiIntegrationSumRounded < 0 )
+                          || ( uiIntegrationSumRounded > 200 ) )
+                        {
+                            // On désactive l'état occupé
+                            busyConfigSettings.visible  = false
+                            errorConfigSettings.visible = true
+                            inputIntegrationTime.show(qsTr("Value must be between 1 and 200"))
                             return;
                         }
                         // Test d'intégrité
@@ -1929,13 +2149,25 @@ Item {
                             tooltipAverageSample.show(qsTr("Value must be between 0 and 65535"))
                             return;
                         }
+                        // Test d'intégrité
+                        if(  ( uiTestModeRounded < 0 )
+                          || ( uiTestModeRounded > 15 ) )
+                        {
+                            // On désactive l'état occupé
+                            busyConfigSettings.visible  = false
+                            errorConfigSettings.visible = true
+                            tooltipFluoTbdTestmode.show(qsTr("Value must be between 0 and 15"))
+                            return;
+                        }
 
                         // Sauvegarde
                         tFactoryEvent.sFSaveConfigSettingsEvosens( uiSN_Y,
                                                                    uiSN_N,
                                                                    fIntegrationTime,
+                                                                   fIntegrationSum,
                                                                    fRange,
-                                                                   fAverage );
+                                                                   fAverage,
+                                                                   fTestMode );
                     }
                     // Tout sauf evosens
                     else{

@@ -186,9 +186,11 @@ if(  ( tWIMOParametersSensor.ttChannel[0].ucParameter == ( TUCHAR )5  )
   sBufferTree += QString::asprintf(
   "            tEvosens\t\t\t\t-\n"
   "                uiIntegrationTime\t\t\t\t%d\n"
+  "                uiIntegrationSum\t\t\t\t%d\n"
   "                ucRange\t\t\t\t%d\n"
   "                uiAverageSamples\t\t\t\t%d\n",
   tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiIntegrationTime,
+  tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiIntegrationSum,
   tWIMOParametersSensor.tHeader.tSensor.tEvosens.ucRange,
   tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiAverageSamples );
  }

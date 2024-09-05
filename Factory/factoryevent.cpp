@@ -220,8 +220,10 @@ void FactoryEvent::configSettingsDisplayEvosens( void )
  emit configSettingsDisplayEvosensSignal( tWIMOParametersSensor.tHeader.tProduct.ucSerialNumberY,
                                           tWIMOParametersSensor.tHeader.tProduct.uiSerialNumberN,
                                           tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiIntegrationTime,
+                                          tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiIntegrationSum,
                                           tWIMOParametersSensor.tHeader.tSensor.tEvosens.ucRange,
-                                          tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiAverageSamples );
+                                          tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiAverageSamples,
+                                          tWIMOParametersSensor.tHeader.tSensor.tEvosens.ucTestMode );
 }
 //----------------------------------------------------------
 // Fonction CPP : sauvegarde congiuration evosens
@@ -229,8 +231,10 @@ void FactoryEvent::configSettingsDisplayEvosens( void )
 QString FactoryEvent::sFSaveConfigSettingsEvosens( int uiSN_Y,
                                                    int uiSN_N,
                                                    int uiIntegrationTime,
+                                                   int uiIntegrationSum,
                                                    int uiRange,
-                                                   int uiAverageSamples )
+                                                   int uiAverageSamples,
+                                                   int ucTestMode )
 {
  qDebug("saveConfigSettingsEvosens");
  // Test SN year
@@ -250,8 +254,10 @@ QString FactoryEvent::sFSaveConfigSettingsEvosens( int uiSN_Y,
  tWIMOParametersSensor.tHeader.tProduct.ucSerialNumberY = ( TUCHAR )uiSN_Y;
  tWIMOParametersSensor.tHeader.tProduct.uiSerialNumberN = ( TUINT )uiSN_N;
  tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiIntegrationTime = ( TUINT )uiIntegrationTime;
+ tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiIntegrationSum  = ( TUINT )uiIntegrationSum;
  tWIMOParametersSensor.tHeader.tSensor.tEvosens.ucRange           = ( TUCHAR )uiRange;
  tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiAverageSamples  = ( TUINT )uiAverageSamples;
+ tWIMOParametersSensor.tHeader.tSensor.tEvosens.ucTestMode        = ( TUCHAR )ucTestMode;
  // Sauvegarde de la config dans le capteur
  vFWIMOModbusSaveGeneralConfOnlyToSensor();
  // Valide

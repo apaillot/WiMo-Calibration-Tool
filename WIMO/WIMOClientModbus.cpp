@@ -2298,7 +2298,7 @@ TBOOL bGWIMOModbusManager( void )
      {
       vFQDebug(QString("eMODBUS_STATE_MEASURING > Flag %1").arg(ptModBusDriverData->tucData[1]));
       // Test de mesure en cours
-      if(  ( ptModBusDriverData->tucData[1] & aWIMO_SENSOR_I2C_STATUS_CONVERTING )
+      if(  ( ( ptModBusDriverData->tucData[1] & aWIMO_SENSOR_I2C_STATUS_CONVERTING ) && tModbus.uiMeasureTimeoutCpt )
       //%%AP - 2021.12.20 - DEBUG - Si non réponse
         || ( ( ptModBusDriverData->tucData[1] == ( TUCHAR )0 ) && tModbus.uiMeasureTimeoutCpt )
         )
@@ -2858,7 +2858,7 @@ TBOOL bGWIMOModbusManager( void )
         && ( tWIMOParametersSensor.ttChannel[0].ucParameter != ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_S21_AMMONIUM         ) // S21
         && ( tWIMOParametersSensor.ttChannel[0].ucParameter != ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_S22_POTASSIUM        ) // S22
         && ( tWIMOParametersSensor.ttChannel[0].ucParameter != ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_S23_NITRATE          ) // S23
-        && ( tWIMOParametersSensor.ttChannel[0].ucParameter != ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_S24                  ) // S24
+        && ( tWIMOParametersSensor.ttChannel[0].ucParameter != ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_S24_CHLORIDE         ) // S24
         && ( tWIMOParametersSensor.ttChannel[0].ucParameter != ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_S25_O2_TEMPERATURE   ) // S25
         && ( tWIMOParametersSensor.ttChannel[0].ucParameter != ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_S26_CRUDE_OIL_TURNER ) // S26
         && ( tWIMOParametersSensor.ttChannel[0].ucParameter != ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_S27_CRUDE_OIL_NKE    ) // S27

@@ -72,7 +72,7 @@
 #define aWIMO_PARAMETERS_CHANNEL_S21_AMMONIUM          ( TUCHAR )21
 #define aWIMO_PARAMETERS_CHANNEL_S22_POTASSIUM         ( TUCHAR )22
 #define aWIMO_PARAMETERS_CHANNEL_S23_NITRATE           ( TUCHAR )23
-#define aWIMO_PARAMETERS_CHANNEL_S24                   ( TUCHAR )24
+#define aWIMO_PARAMETERS_CHANNEL_S24_CHLORIDE          ( TUCHAR )24
 #define aWIMO_PARAMETERS_CHANNEL_S25_O2_TEMPERATURE    ( TUCHAR )25
 #define aWIMO_PARAMETERS_CHANNEL_S26_CRUDE_OIL_TURNER  ( TUCHAR )26
 #define aWIMO_PARAMETERS_CHANNEL_S27_CRUDE_OIL_NKE     ( TUCHAR )27
@@ -250,6 +250,8 @@ typedef struct
              TUINT  uiIntegrationTime;
              TUCHAR ucRange;
              TUINT  uiAverageSamples;
+             TUINT  uiIntegrationSum;
+             TUCHAR ucTestMode;
             } tEvosens;
           };
         }

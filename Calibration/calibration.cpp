@@ -1449,6 +1449,11 @@ Q_INVOKABLE void Calibration::exportCalibrationToPdf( QString sFilePath )
                   "<td>%d</td>"
                  "</tr>"
                  "<tr>"
+                 "<tr>"
+                  "<td><strong>Integration sum: </strong></td>"
+                  "<td>%d</td>"
+                 "</tr>"
+                 "<tr>"
                   "<td><strong>Range: </strong></td>"
                   "<td>%d</td>"
                  "</tr>"
@@ -1459,6 +1464,7 @@ Q_INVOKABLE void Calibration::exportCalibrationToPdf( QString sFilePath )
                 "</table>"
                "</div>",
                tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiIntegrationTime,
+               tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiIntegrationSum,
                tWIMOParametersSensor.tHeader.tSensor.tEvosens.ucRange,
                tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiAverageSamples );
      sDoc.append( tcBuffer );
