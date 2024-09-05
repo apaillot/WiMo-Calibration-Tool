@@ -63,6 +63,7 @@ contains( COMPILATION_VERSION, 64 ) {
  INCLUDEPATH += C:/Qwt-6.4.0-svn-64-15.1/include
  INCLUDEPATH += ./Composants/Ftdi-64
  LIBS += -L$$PWD/Composants/Ftdi-64 -lftd2xx
+ #LIBS += -L$$PWD/Composants/Ftdi-64
  #LIBS += -L$$PWD/Qwt-64
 # LIBS += -L"C:\Qwt-6.4.0-svn-64-15.1\lib"-lqwt
  include(C:/Qwt-6.4.0-svn-64-15.1/features/qwt.prf)
@@ -77,6 +78,7 @@ contains( COMPILATION_VERSION, 32 ) {
  INCLUDEPATH += C:/Qwt-6.4.0-svn-32-15.1/include
  INCLUDEPATH += ./Composants/Ftdi-32
  LIBS += -L$$PWD/Composants/Ftdi-32 -lftd2xx
+ #LIBS += -L$$PWD/Composants/Ftdi-32
  #LIBS += -L$$PWD/Liveview/Qwt-32
  #LIBS += -L$$PWD/Ftdi/ -lftd2xx
  #LIBS += -L"C:\Qwt-6.4.0-svn-32-15.1\lib"-lqwt
