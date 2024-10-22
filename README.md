@@ -336,3 +336,7 @@ IHM PC permettant la calibration des capteurs WiMo.<BR>
 
 ### V1.3.6 - (2023.06.16)
   - Dashboard - Elargissement de la fenêtre de sélection du port COM.
+  
+### V1.3.7 - (2023.10.22)
+  - Factory - Ajout des paramètres pour fluo V2.
+  - Factory - La commande reset bloque le logiciel après launch.

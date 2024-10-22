@@ -138,9 +138,9 @@ Item {
                 m_uiResetSensorProgressBar = 0;
                 //resetLoadNumber.text   = "0 %";
                 // Cache les progress bar et number
-                m_bUpdateBusyRefresh = false;
+                m_bResetSensorBusyRefresh = false;
                 // Affichage du bouton
-                m_bUpdateBtnRefreshVisible   = true;
+                m_bResetSensorBtnVisible   = true;
                 // Autorisation du click utilisateur
                 vFAllowUserClick();
                 // Affichage de la fenêtre
