@@ -223,7 +223,8 @@ void FactoryEvent::configSettingsDisplayEvosens( void )
                                           tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiIntegrationSum,
                                           tWIMOParametersSensor.tHeader.tSensor.tEvosens.ucRange,
                                           tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiAverageSamples,
-                                          tWIMOParametersSensor.tHeader.tSensor.tEvosens.ucTestMode );
+                                          tWIMOParametersSensor.tHeader.tSensor.tEvosens.ucTestMode,
+                                          tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiPowerOn );
 }
 //----------------------------------------------------------
 // Fonction CPP : sauvegarde congiuration evosens
@@ -234,7 +235,8 @@ QString FactoryEvent::sFSaveConfigSettingsEvosens( int uiSN_Y,
                                                    int uiIntegrationSum,
                                                    int uiRange,
                                                    int uiAverageSamples,
-                                                   int ucTestMode )
+                                                   int ucTestMode,
+                                                   int uiPowerOn )
 {
  qDebug("saveConfigSettingsEvosens");
  // Test SN year
@@ -258,6 +260,7 @@ QString FactoryEvent::sFSaveConfigSettingsEvosens( int uiSN_Y,
  tWIMOParametersSensor.tHeader.tSensor.tEvosens.ucRange           = ( TUCHAR )uiRange;
  tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiAverageSamples  = ( TUINT )uiAverageSamples;
  tWIMOParametersSensor.tHeader.tSensor.tEvosens.ucTestMode        = ( TUCHAR )ucTestMode;
+ tWIMOParametersSensor.tHeader.tSensor.tEvosens.uiPowerOn         = ( TUINT )uiPowerOn;
  // Sauvegarde de la config dans le capteur
  vFWIMOModbusSaveGeneralConfOnlyToSensor();
  // Valide

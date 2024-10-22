@@ -17,7 +17,7 @@ Item {
     // Reset
     property int  m_uiResetProgressBar: 0
     property bool m_bResetBusyRefresh: false
-    property bool m_bResetBtnVisible: true
+    property bool m_bResetBusyRefresh: true
 
     //==============================================================
     // Déclaration des variables internes
@@ -86,12 +86,16 @@ Item {
             //---------------
             // Reset inter
             //---------------
+            //RowBlueUpdateButton{
             RowBlueButton{
                 sTextDesc: "Reset"
                 sLogo: "qrc:/Logo/Factory/factory-reset.png"
                 uiLogoHeight: 20
                 sBlueButtonText: "Trigger"
                 uiBtnBlueWidth: 130
+                //m_uiUpdateProgressBar: m_factorySensorSoftwareBlocID.m_uiResetProgressBar
+                //m_bBusyRefresh:        m_factorySensorSoftwareBlocID.m_bResetBusyRefresh
+                //m_bBtnRefreshVisible:  m_factorySensorSoftwareBlocID.m_bResetBusyRefresh
                 onBlueButtonClicked:{ m_factorySensorSoftwareBlocID.triggerResetButtonClicked() }
             }
         }

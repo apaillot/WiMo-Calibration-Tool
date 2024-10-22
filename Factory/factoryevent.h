@@ -32,7 +32,8 @@ signals:
                                           int uiIntegrationSum,
                                           int ucRange,
                                           int uiAverageSamples,
-                                          int uiTestMode );
+                                          int uiTestMode,
+                                          int uiPowerOn );
  void endOfSNSubmitSignal( void );
  void endOfRefreshDataSignal( void );
 
@@ -43,7 +44,7 @@ public slots:
  void startWriteConfig( QString );
  void saveConfigSettings( int, int );
  void initModbus( void );
- QString sFSaveConfigSettingsEvosens( int, int, int, int, int, int, int );
+ QString sFSaveConfigSettingsEvosens( int, int, int, int, int, int, int, int );
  void saveConfigSettingsCT( int, int, float, float, float, float );
 
 private:

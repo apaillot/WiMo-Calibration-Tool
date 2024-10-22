@@ -120,7 +120,7 @@ Window {
     property bool  bWiper: false;
     property bool  bO2: false;
     // Hauteur de la page factory
-    property int uiFactoryHeight: 830
+    property int uiFactoryHeight: 890
     // Port COM utilisé
     property string sPortCOMMain: tDataCom.sComPort
 

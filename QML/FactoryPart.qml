@@ -128,21 +128,19 @@ Item {
 
             // Mise à jour en cours
             if( parseInt(uiLoaderValue) < 100 ){
-                resetProgressBar.value = uiLoaderValue;
+                m_uiResetSensorProgressBar = uiLoaderValue;
                 //updateLoadNumber.text = uiLoaderValue+" % (update)";
-                resetLoadNumber.text = uiLoaderValue+" %";
+                //resetLoadNumber.text = uiLoaderValue+" %";
             }
             // Si fin de mise à jour
             if( parseInt(uiLoaderValue) == 100 ){
                 // Réinit
-                resetProgressBar.value = 0;
-                resetLoadNumber.text   = "0 %";
+                m_uiResetSensorProgressBar = 0;
+                //resetLoadNumber.text   = "0 %";
                 // Cache les progress bar et number
-                resetProgressBar.visible = false;
-                resetLoadNumber.visible  = false;
+                m_bUpdateBusyRefresh = false;
                 // Affichage du bouton
-                btnResetRect.visible   = true;
-                btnResetShadow.visible = true;
+                m_bUpdateBtnRefreshVisible   = true;
                 // Autorisation du click utilisateur
                 vFAllowUserClick();
                 // Affichage de la fenêtre
@@ -165,7 +163,8 @@ Item {
                                                        uiIntegrationSum,
                                                        ucRange,
                                                        uiAverageSamples,
-                                                       uiTestMode ) {
+                                                       uiTestMode,
+                                                       uiPowerOn ) {
             console.log("== onConfigSettingsDisplayEvosensSignal ==");
             console.log("uiSN_Y = "+uiSN_Y);
             console.log("uiSN_N = "+uiSN_N);
@@ -175,9 +174,10 @@ Item {
             //%%AP - 2020.05.19 -
             inputIntegrationTime.text = uiIntegrationTime
             inputIntegrationSum.text  = uiIntegrationSum
-            inputRange.text = ucRange
+            inputRange.text           = ucRange
             inputAverageSample.text   = uiAverageSamples
             inputFluoTbdTestmode.text = uiTestMode
+            inputFluoTbdPowerOn.text  = uiPowerOn
         }
         // Fin de l'enregistrement du numéro de série
         function onEndOfSNSubmitSignal() {
@@ -231,11 +231,11 @@ Item {
                 //
                 if( bEvosensParam ){
                     // Taille de la fenêtre
-                    uiFactoryHeight = 870
+                    uiFactoryHeight = 940
                     updatePartID.height = 940
                     //
                     //paramOpen.height = 278
-                    paramOpen.height = 330
+                    paramOpen.height = 380
                 }
                 else if( bCTParam ){
                     // Taille de la fenêtre
@@ -326,8 +326,8 @@ Item {
     //==============================================================
     id: updatePartID
     implicitWidth: 662
-    implicitHeight: 850
-    height: 850
+    implicitHeight: 890
+    height: 890
 
     /*
     // Background color
@@ -705,6 +705,12 @@ Item {
                 vFLockUserClick();
                 // Reset
                 tFactoryEvent.startReset();
+                // Réinit
+                m_uiResetSensorProgressBar = 0;
+                // Cache les progress bar et number
+                m_bResetSensorBusyRefresh = true;
+                // Affichage du bouton
+                m_bResetSensorBtnVisible  = false;
             }
         }
 
@@ -1825,6 +1831,95 @@ Item {
                     visible: bEvosensParam
                 }
                 //------------------------------
+                // Fluo Tbd PowerOn
+                //------------------------------
+                RowLayout {
+                    id: rowFluoTbdPowerOn
+                    Layout.preferredWidth: parent.width - 20
+                    Layout.preferredHeight: 30
+                    Layout.leftMargin: 10
+                    width: parent.width - 20
+                    visible: bEvosensParam
+
+                    Rectangle {
+                        id: rowFluoTbdPowerOn2
+                        width: ( parent.width - 25 ) / 3
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+                        height: parent.height
+                        Layout.preferredHeight: parent.height
+                        Image{
+                            id: imgFluoTbdPowerOn
+                            source: "qrc:/Logo/Calibration/calib-average.png"
+                            width: 30
+                            height: 16
+                            fillMode: Image.PreserveAspectFit
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                        Text {
+                            id: txtFluoTbdPowerOn
+                            text: qsTr("Power On")
+                            height: parent.height
+                            anchors.left: imgFluoTbdPowerOn.right
+                            anchors.leftMargin: 10
+                            anchors.verticalCenter: parent.verticalCenter
+                            verticalAlignment: Text.AlignVCenter
+                            font.family: "open sans"
+                            font.pixelSize: 12
+                            font.weight: Font.DemiBold
+                        }
+                    }
+                    Rectangle {
+                        id: rectangleFluoTbdPowerOn4
+                        Layout.preferredHeight: 30
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+
+                        TextField {
+                            id: inputFluoTbdPowerOn
+                            width: parent.width
+                            text: qsTr("")
+                            height: 30
+                            activeFocusOnPress: true
+                            selectByMouse: true
+
+                            ToolTip {
+                                id: tooltipFluoTbdPowerOn
+                                visible: false
+                                text: qsTr("InvalidValue")
+                                font.weight: Font.Light
+                                font.family: "Open Sans"
+                                opacity: 0.95
+                                enter: Transition {
+                                    NumberAnimation { property: "opacity"; from: 0.0; to: 1 }
+                                }
+                                exit: Transition {
+                                    NumberAnimation { property: "opacity"; from: 1.0; to: 0.0 }
+                                }
+                                background: Rectangle{
+                                    border.color: "#555555"
+                                    color: "white"
+                                }
+                            }
+                        }
+                    }
+                    Rectangle {
+                        id: rectangleFluoTbdPowerOnDummy
+                        width: 200
+                        height: 200
+                        color: "#ffffff"
+                        Layout.preferredHeight: parent.height
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+                    }
+                } // RowLayout range
+                //--- Ligne ---
+                Rectangle {
+                    id: fluoTbdPowerOnLine
+                    width: parent.width
+                    height: 1
+                    color: "#62888888"
+                    Layout.fillWidth: true
+                    visible: bEvosensParam
+                }
+                //------------------------------
                // CT Compensation coefficient
                //------------------------------
                RowLayout {
@@ -2038,7 +2133,7 @@ Item {
                     }
                     // Si c'est un Tbd / Chla_nke / PhycoC_nke / PhycoE_nke / CDOM_nke / Trypto
                     else if( bEvosensParam ){
-                        var fIntegrationTime, fRange, fAverage, fIntegrationSum, fTestMode;
+                        var fIntegrationTime, fRange, fAverage, fIntegrationSum, fTestMode, fPowerOn;
                         // Vérification intégration time
                         fIntegrationTime = parseFloat( inputIntegrationTime.text)
                         // Vérification intégration time
@@ -2049,12 +2144,15 @@ Item {
                         fAverage = parseFloat( inputAverageSample.text)
                         // Vérification test mode
                         fTestMode = parseFloat( inputFluoTbdTestmode.text)
+                        // Vérification power on
+                        fPowerOn = parseFloat( inputFluoTbdPowerOn.text)
 
                         var fIntegrationTimeRounded = parseFloat(parseInt(fIntegrationTime));
                         var fIntegrationSumRounded  = parseFloat(parseInt(fIntegrationSum));
                         var fRangeTimeRounded       = parseFloat(parseInt(fRange));
                         var fAverageRounded         = parseFloat(parseInt(fAverage));
                         var fTestModeRounded        = parseFloat(parseInt(fTestMode));
+                        var fPowerOnRounded         = parseFloat(parseInt(fPowerOn));
                         // Vérification fonctionnement avec un entier
                         if( fIntegrationTime !== fIntegrationTimeRounded )
                         {
@@ -2097,17 +2195,27 @@ Item {
                             tooltipAverageSample.show(qsTr("Value must be an integer"))
                             return;
                         }
+                        if( fPowerOn !== fPowerOnRounded )
+                        {
+                            // On désactive l'état occupé
+                            busyConfigSettings.visible  = false
+                            errorConfigSettings.visible = true
+                            tooltipFluoTbdPowerOn.show(qsTr("Value must be an integer"))
+                            return;
+                        }
                         var uiIntegrationTimeRounded = parseInt(fIntegrationTime);
                         var uiIntegrationSumRounded  = parseInt(fIntegrationSum);
                         var uiRangeTimeRounded       = parseInt(fRange);
                         var uiAverageRounded         = parseInt(fAverage);
                         var uiTestModeRounded        = parseInt(fTestMode);
+                        var uiPowerOnRounded         = parseInt(fPowerOn);
 
                         console.log( uiIntegrationTimeRounded )
                         console.log( uiIntegrationSumRounded )
                         console.log( uiRangeTimeRounded )
                         console.log( uiAverageRounded )
                         console.log( uiTestModeRounded )
+                        console.log( uiPowerOnRounded )
 
                         // Test d'intégrité
                         if(  ( uiIntegrationTimeRounded < 0 )
@@ -2151,12 +2259,22 @@ Item {
                         }
                         // Test d'intégrité
                         if(  ( uiTestModeRounded < 0 )
-                          || ( uiTestModeRounded > 15 ) )
+                          || ( uiTestModeRounded > 256 ) )
                         {
                             // On désactive l'état occupé
                             busyConfigSettings.visible  = false
                             errorConfigSettings.visible = true
-                            tooltipFluoTbdTestmode.show(qsTr("Value must be between 0 and 15"))
+                            tooltipFluoTbdTestmode.show(qsTr("Value must be between 0 and 255"))
+                            return;
+                        }
+                        // Test d'intégrité
+                        if(  ( uiPowerOnRounded < 0 )
+                          || ( uiPowerOnRounded > 65535 ) )
+                        {
+                            // On désactive l'état occupé
+                            busyConfigSettings.visible  = false
+                            errorConfigSettings.visible = true
+                            tooltipFluoTbdTestmode.show(qsTr("Value must be between 0 and 65535"))
                             return;
                         }
 
@@ -2167,7 +2285,8 @@ Item {
                                                                    fIntegrationSum,
                                                                    fRange,
                                                                    fAverage,
-                                                                   fTestMode );
+                                                                   fTestMode,
+                                                                   fPowerOn );
                     }
                     // Tout sauf evosens
                     else{

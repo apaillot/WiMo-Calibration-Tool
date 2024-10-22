@@ -180,5 +180,6 @@
         <file>QML/Component/LiveviewButtonAdvancedPanel.qml</file>
         <file>QML/Component/LiveviewASButtonReturn.qml</file>
         <file>QML/Component/FactorySensorSoftwareBloc.qml</file>
+        <file>QML/Component/RowBlueUpdateButton.qml</file>
     </qresource>
 </RCC>

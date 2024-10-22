@@ -252,6 +252,7 @@ typedef struct
              TUINT  uiAverageSamples;
              TUINT  uiIntegrationSum;
              TUCHAR ucTestMode;
+             TUINT  uiPowerOn;
             } tEvosens;
           };
         }
