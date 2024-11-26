@@ -567,7 +567,7 @@ void vFCalibrationFillPointToQML( TUINT uiChannel )
      // Si O2
      if(  ( tWIMOParametersSensor.ttChannel[uiChannel].ucParameter == 6 )
       ||  ( tWIMOParametersSensor.ttChannel[uiChannel].ucParameter == 7 )
-      ||  ( tWIMOParametersSensor.ttChannel[uiChannel].ucParameter == 25 ) )
+      /*||  ( tWIMOParametersSensor.ttChannel[uiChannel].ucParameter == 25 )*/ )
       {
        // Inversion d'écriture
        ptCalibPt->addPoint(CalibPoint(ucIndex+1, sRaw, sPhy ));
@@ -947,7 +947,7 @@ Q_INVOKABLE void Calibration::addCalibPoint( unsigned int uiChannel,
  //%%AP - 2020.11.30 - Ajout d'une exception pour l'O2
  if(  ( tWIMOParametersSensor.ttChannel[uiChannel].ucParameter == ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_OXYGEN_CONCENTRATION )  // S06
    || ( tWIMOParametersSensor.ttChannel[uiChannel].ucParameter == ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_OXYGEN_SATURATION    )  // S07
-   || ( tWIMOParametersSensor.ttChannel[uiChannel].ucParameter == ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_S25_O2_TEMPERATURE   ) ) // S25
+   /*|| ( tWIMOParametersSensor.ttChannel[uiChannel].ucParameter == ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_S25_O2_TEMPERATURE   )*/ ) // S25
   {
    // Ajout des points dans la structure avec trie préalable
    vFCalibrationAddPoint( ( TUCHAR )uiChannel, fRaw, fPhy );

@@ -338,5 +338,8 @@ IHM PC permettant la calibration des capteurs WiMo.<BR>
   - Dashboard - Elargissement de la fenêtre de sélection du port COM.
   
 ### V1.3.7 - (2024.10.22)
-  - Factory - Ajout des paramètres pour fluo V2.
-  - Factory - La commande reset bloque le logiciel après launch.
+- Factory - Ajout des paramètres pour fluo V2.
+- Factory - La commande reset bloque le logiciel après launch.
+  
+### V1.3.8 - (2024.11.26)
+- Calib - DO - Les points de calibration pour l'O2 température sont inversés.
