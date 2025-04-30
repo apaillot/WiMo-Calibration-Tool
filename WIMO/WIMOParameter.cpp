@@ -192,6 +192,9 @@ void vFWIMOParameterConfProductQMLUpdate( void )
    // Angle capteur
    ptWiperObj->setProperty("uiClockwise",     tWIMOParametersSensor.tHeader.tWiper.uiClockwiseAngle);
    ptWiperObj->setProperty("uiAnticlockwise", tWIMOParametersSensor.tHeader.tWiper.uiCounterClockwiseAngle);
+   ptWiperObj->setProperty("uiOffset",        tWIMOParametersSensor.tHeader.tWiper.uiOffset);
+   ptWiperObj->setProperty("uiMin",           tWIMOParametersSensor.tHeader.tWiper.uiMinValue);
+   ptWiperObj->setProperty("uiMax",           tWIMOParametersSensor.tHeader.tWiper.uiMaxValue);
   }
 }
 

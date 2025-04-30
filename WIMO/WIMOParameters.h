@@ -259,10 +259,16 @@ typedef struct
        tSensor;
        struct
         {
-         TUINT uiClockwiseAngle;
-         TUINT uiCounterClockwiseAngle;
-         TCHAR cPeriod;
-         TUINT uiParkingAngle;
+         TUINT  uiClockwiseAngle;
+         TUINT  uiCounterClockwiseAngle;
+         TCHAR  cPeriod;
+         TUINT  uiParkingAngle;
+         TUCHAR ucDummy1;
+         TUCHAR ucDummy2;
+         TUCHAR ucDummy3;
+         TUINT  uiMinValue;
+         TUINT  uiMaxValue;
+         TUINT  uiOffset;
         }
        tWiper;
        struct

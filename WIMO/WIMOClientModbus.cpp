@@ -248,6 +248,7 @@ static TCONST TModBusRequestObject tModbusResult           = { 0x04,  13,   4, {
 // Requête pour balai
 static TCONST TModBusRequestObject tModbusClean            = { 0x06,   4,   4, {0x00, 0x20, 0x80, 0x00} };
 static TCONST TModBusRequestObject tModbusCleaning         = { 0x04,   3,   4, {0x00, 0x21, 0x00, 0x01} };
+static TCONST TModBusRequestObject tModbusWiperCalibrate   = { 0x06,   4,   4, {0x00, 0x22, 0x80, 0x00} };
 // Requête de mise à jour de l'interface
 static TCONST TModBusRequestObject tModbusStartInterfaceUpdate = { 0x06,   4,   4, {0xF0, 0x00, 0x80, 0x00} };
 // Requête de mise à jour
@@ -896,6 +897,31 @@ TUCHAR ucFWIMOModbusMessageSize( TUCHAR ucFunction )
 {
  // On retourne la taille attendue
  return( ( TUCHAR )tModbus.ucReplySize );
+}
+
+//----------------------------------------------------------------------------//
+// Déclenchement de la calibration balai
+//----------------------------------------------------------------------------//
+void vFWIMOModbusStartCalibration( void )
+{
+ // Gestion appui
+ if( tModbus.eState != eMODBUS_STATE_FREE )
+  {
+   //MessageDlg( "Action impossible. Another action is already running !", mtError, TMsgDlgButtons() << mbOK, 0 );
+   return;
+  }
+ // Requête
+ tModbus.ucReplySize = tModbusWiperCalibrate.ucReplySize;
+ if( tModBus.bFSend( ( TUCHAR )0x80, tModbusWiperCalibrate.ucFunction, ( TUCHAR * )tModbusWiperCalibrate.tucRequest, tModbusWiperCalibrate.ucRequestSize ) )
+  {
+   tModbus.eState = eMODBUS_STATE_CLEAN;
+  }
+ // Echec
+ else
+  {
+   //MessageDlg( "Communication error !", mtError, TMsgDlgButtons() << mbOK, 0 );
+   return;
+  }
 }
 
 //----------------------------------------------------------------------------//
@@ -2922,11 +2948,11 @@ TBOOL bGWIMOModbusManager( void )
        }
 
       // Selon le type de capteur
-      if(  ( tWIMOParametersSensor.ttChannel[0].ucParameter == ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_TURBIDITY )
-        || ( tWIMOParametersSensor.ttChannel[0].ucParameter == ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_FLUO_CHLA )
+      if(  ( tWIMOParametersSensor.ttChannel[0].ucParameter == ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_TURBIDITY   )
+        || ( tWIMOParametersSensor.ttChannel[0].ucParameter == ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_FLUO_CHLA   )
         || ( tWIMOParametersSensor.ttChannel[0].ucParameter == ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_FLUO_PHYCOC )
         || ( tWIMOParametersSensor.ttChannel[0].ucParameter == ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_FLUO_PHYCOE )
-        || ( tWIMOParametersSensor.ttChannel[0].ucParameter == ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_FLUO_CDOM )
+        || ( tWIMOParametersSensor.ttChannel[0].ucParameter == ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_FLUO_CDOM   )
         || ( tWIMOParametersSensor.ttChannel[0].ucParameter == ( TUCHAR )aWIMO_PARAMETERS_CHANNEL_FLUO_TRYPTO ) )
        {
         // On affiche Range/Average/Integration Time

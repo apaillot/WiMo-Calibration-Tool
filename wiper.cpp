@@ -89,6 +89,45 @@ void Wiper::setAnticlockwise(int n)
 }
 
 //----------------------------------------------------------
+// Angle offset
+//----------------------------------------------------------
+int Wiper::getOffset()
+{
+ return m_uiOffset;
+}
+void Wiper::setOffset(int n)
+{
+ m_uiOffset = n;
+ emit offsetChanged();
+}
+
+//----------------------------------------------------------
+// Angle min
+//----------------------------------------------------------
+int Wiper::getMin()
+{
+ return m_uiMin;
+}
+void Wiper::setMin(int n)
+{
+ m_uiMin = n;
+ emit minChanged();
+}
+
+//----------------------------------------------------------
+// Angle max
+//----------------------------------------------------------
+int Wiper::getMax()
+{
+ return m_uiMax;
+}
+void Wiper::setMax(int n)
+{
+ m_uiMax = n;
+ emit maxChanged();
+}
+
+//----------------------------------------------------------
 // Busy state
 //----------------------------------------------------------
 bool Wiper::getBusyState()
@@ -120,12 +159,14 @@ void Wiper::setErrorState(bool n)
 // Mise à jour du tableau des points de calibration
 //----------------------------------------------------------
 Q_INVOKABLE void Wiper::submitWiperAngle( unsigned int uiClockwise,
-                              unsigned int uiAnticlockwise )
+                                          unsigned int uiAnticlockwise,
+                                          unsigned int uiOffset  )
 {
  qDebug("==Wiper::submitWiperAngle==");
  qDebug() << "uiClockwise = %d" << uiClockwise;
  qDebug("uiClockwise = %d",uiClockwise);
  qDebug("uiAnticlockwise = %d",uiAnticlockwise);
+ qDebug("uiOffset = %d",uiOffset);
  // Test d'intégrité
  if(  (  ( uiClockwise > 270 )
       || ( uiClockwise < 30  ) )
@@ -133,15 +174,12 @@ Q_INVOKABLE void Wiper::submitWiperAngle( unsigned int uiClockwise,
  if(  (  ( uiAnticlockwise > 270 )
       || ( uiAnticlockwise < 30  ) )
    && ( uiAnticlockwise != 0       ) ) return;
+ if( uiOffset > 90 ) return;
 
  // Mise à jour des variables de la structure
  tWIMOParametersSensor.tHeader.tWiper.uiClockwiseAngle        = ( TUINT )uiClockwise;
  tWIMOParametersSensor.tHeader.tWiper.uiCounterClockwiseAngle = ( TUINT )uiAnticlockwise;
- //tWIMOParametersSensor.ttChannel[uiChannelSettings].cCalibration = ( char )ucCalibType;
- //tWIMOParametersSensor.ttChannel[uiChannelSettings].uiAverage    = ( unsigned short int )uiAverage;
- // Ecriture capteur
- //vFWIMOModbusSaveChannelToSensor( uiChannelSettings );
- //vFWIMOModbusSaveConfigToSensor();
+ tWIMOParametersSensor.tHeader.tWiper.uiOffset                = ( TUINT )uiOffset;
 }
 
 
@@ -153,6 +191,17 @@ Q_INVOKABLE void Wiper::saveConfiguration( void )
  qDebug("==saveConfiguration==");
  // Ecriture capteur
  vFWIMOModbusSaveGeneralConfOnlyToSensor();
+}
+
+//----------------------------------------------------------
+// Start calibration
+//----------------------------------------------------------
+Q_INVOKABLE void Wiper::startCalibration( void )
+{
+ qDebug("Déclenchement calibration balai");
+
+ // Appel de la fonction de lancement de la mesure
+ vFWIMOModbusStartCalibration();
 }
 
 //----------------------------------------------------------

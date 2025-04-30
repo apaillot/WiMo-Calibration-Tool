@@ -80,6 +80,10 @@ extern TUCHAR ucFWIMOModbusMessageSize( TUCHAR );
 
 //----------------------------------------------------------------------------//
 // Déclenchement du balai
+extern void vFWIMOModbusStartCalibration( void );
+
+//----------------------------------------------------------------------------//
+// Déclenchement du balai
 extern void vFWIMOModbusStartClean( void );
 
 //----------------------------------------------------------------------------//

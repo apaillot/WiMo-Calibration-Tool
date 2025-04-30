@@ -16,7 +16,7 @@ Item {
    // Wiper grafcet
    property bool bWiperGrafcetStarted: false
 
-   //=============================================================
+    //=============================================================
     // Objet Wiper
     //=============================================================
     Wiper {
@@ -24,6 +24,9 @@ Item {
         objectName: "wiperID"
         uiClockwise: 0
         uiAnticlockwise: 0
+        uiOffset: 0
+        uiMin: 0
+        uiMax: 0
         bBusyState: false
         bErrorState: false
         // Changement d'état busy
@@ -37,7 +40,7 @@ Item {
                 vFLockUserClick();
                 // On désactive l'état d'erreur si présent
                 errorWiperSettings.visible = false
-                wiperID.bErrorState  = false
+                wiperID.bErrorState        = false
             }
             // Busy off
             else{
@@ -45,8 +48,9 @@ Item {
                 //mouseAreaWindowBlockClick.visible = false
                 vFAllowUserClick();
                 // On fait disparaitre les busy
-                busyWiperSettings.visible  = false
-                busyRefresh.visible        = false
+                busyWiperSettings.visible      = false
+                busyRefresh.visible            = false
+                busyRefreshCalibration.visible = false
                 // Element montré
                 //btnFormulaRefresh.visible  = true
             }
@@ -64,17 +68,6 @@ Item {
                 // On fait disparaitre les croix d'erreur
                 errorWiperSettings.visible = false
             }
-        }
-    }
-
-    // TEST
-    Timer {
-        id: wiperTestTimer
-        //interval: function(){ return( uiMeasurePeriod * 1000 ) }; running: true; repeat: true
-        interval: 5000; running: true; repeat: true
-        onTriggered: {
-            //console.log(wiperID.uiClockwise)
-            //console.log(wiperID.uiAnticlockwise)
         }
     }
 
@@ -157,7 +150,7 @@ Item {
             //x: 25
             y: 100
             width: wiperPartID.width - 120
-            height: 181
+            height: 200
             color: "#ffffff"
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: parent.horizontalCenter
@@ -194,6 +187,103 @@ Item {
                 y: 42
                 width: parent.width
                 height: 95
+
+                //------------------------------
+                // Anticlockwise angle
+                //------------------------------
+                RowLayout {
+                    id: rowAnticlockwiseAngle
+                    Layout.preferredWidth: parent.width - 20
+                    Layout.preferredHeight: 30
+                    Layout.leftMargin: 10
+                    width: parent.width - 20
+
+                    Rectangle {
+                        id: rowAnticlockwiseAngle2
+                        width: ( parent.width - 25 ) / 3
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+                        height: parent.height
+                        Layout.preferredHeight: parent.height
+                        Image{
+                            id: imgAnticlockwiseAngle
+                            source: "qrc:/Logo/Calibration/calib-average.png"
+                            width: 30
+                            height: 16
+
+                            fillMode: Image.PreserveAspectFit
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                        Text {
+                            id: txtAnticlockwiseAngle
+                            text: qsTr("Anticlockwise")
+                            height: parent.height
+                            anchors.left: imgAnticlockwiseAngle.right
+                            anchors.leftMargin: 10
+                            anchors.verticalCenter: parent.verticalCenter
+                            verticalAlignment: Text.AlignVCenter
+                            font.family: "open sans"
+                            font.pixelSize: 12
+                            font.weight: Font.DemiBold
+                        }
+                    }
+                    TextField {
+                        id: inputAnticlockwise
+                        text: wiperID.uiAnticlockwise
+                        height: 30
+                        activeFocusOnPress: true
+                        Layout.preferredHeight: 30
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+                        selectByMouse: true
+
+                        ToolTip {
+                            id: tooltipAnticlockwise
+                            visible: false
+                            text: qsTr("InvalidValue")
+                            font.weight: Font.Light
+                            font.family: "Open Sans"
+                            opacity: 0.95
+                            enter: Transition {
+                                NumberAnimation { property: "opacity"; from: 0.0; to: 1 }
+                            }
+                            exit: Transition {
+                                NumberAnimation { property: "opacity"; from: 1.0; to: 0.0 }
+                            }
+                            background: Rectangle{
+                                border.color: "#555555"
+                                color: "white"
+                            }
+                        }
+                    }
+                    Rectangle {
+                        id: rectangleAnticlockwiseDummy
+                        width: 200
+                        height: 200
+                        color: "#ffffff"
+                        Layout.preferredHeight: parent.height
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+                        Text {
+                            id: txtAnticlockwiseAngleUnit
+                            text: qsTr("degree")
+                            height: parent.height
+                            //anchors.left: imgClockwiseAngle.right
+                            //anchors.leftMargin: 10
+                            anchors.verticalCenter: parent.verticalCenter
+                            verticalAlignment: Text.AlignVCenter
+                            font.family: "open sans"
+                            font.pixelSize: 12
+                            font.weight: Font.DemiBold
+                        }
+                    }
+                } // RowLayout Average
+
+                //--- Ligne ---
+                Rectangle {
+                    id: anticlockwiseLine
+                    width: parent.width
+                    height: 1
+                    color: "#62888888"
+                    Layout.fillWidth: true
+                }
 
                 //------------------------------
                 // Clockwise angle
@@ -293,24 +383,25 @@ Item {
                 }
 
                 /**/
+
                 //------------------------------
-                // Anticlockwise angle
+                // Offset angle
                 //------------------------------
                 RowLayout {
-                    id: rowAnticlockwiseAngle
+                    id: rowOffsetAngle
                     Layout.preferredWidth: parent.width - 20
                     Layout.preferredHeight: 30
                     Layout.leftMargin: 10
                     width: parent.width - 20
 
                     Rectangle {
-                        id: rowAnticlockwiseAngle2
+                        id: rowOffsetAngle2
                         width: ( parent.width - 25 ) / 3
                         Layout.preferredWidth: ( parent.width - 15 ) / 3
                         height: parent.height
                         Layout.preferredHeight: parent.height
                         Image{
-                            id: imgAnticlockwiseAngle
+                            id: imgOffsetAngle
                             source: "qrc:/Logo/Calibration/calib-average.png"
                             width: 30
                             height: 16
@@ -319,10 +410,10 @@ Item {
                             anchors.verticalCenter: parent.verticalCenter
                         }
                         Text {
-                            id: txtAnticlockwiseAngle
-                            text: qsTr("Anticlockwise")
+                            id: txtOffsetAngle
+                            text: qsTr("Offset")
                             height: parent.height
-                            anchors.left: imgAnticlockwiseAngle.right
+                            anchors.left: imgOffsetAngle.right
                             anchors.leftMargin: 10
                             anchors.verticalCenter: parent.verticalCenter
                             verticalAlignment: Text.AlignVCenter
@@ -332,8 +423,8 @@ Item {
                         }
                     }
                     TextField {
-                        id: inputAnticlockwise
-                        text: wiperID.uiAnticlockwise
+                        id: inputOffset
+                        text: wiperID.uiOffset
                         height: 30
                         activeFocusOnPress: true
                         Layout.preferredHeight: 30
@@ -341,7 +432,7 @@ Item {
                         selectByMouse: true
 
                         ToolTip {
-                            id: tooltipAnticlockwise
+                            id: tooltipOffset
                             visible: false
                             text: qsTr("InvalidValue")
                             font.weight: Font.Light
@@ -360,14 +451,14 @@ Item {
                         }
                     }
                     Rectangle {
-                        id: rectangleAnticlockwiseDummy
+                        id: rectangleOffsetDummy
                         width: 200
                         height: 200
                         color: "#ffffff"
                         Layout.preferredHeight: parent.height
                         Layout.preferredWidth: ( parent.width - 15 ) / 3
                         Text {
-                            id: txtAnticlockwiseAngleUnit
+                            id: txtOffsetAngleUnit
                             text: qsTr("degree")
                             height: parent.height
                             //anchors.left: imgClockwiseAngle.right
@@ -383,7 +474,7 @@ Item {
 
                 //--- Ligne ---
                 Rectangle {
-                    id: anticlockwiseLine
+                    id: offsetLine
                     width: parent.width
                     height: 1
                     color: "#62888888"
@@ -460,10 +551,40 @@ Item {
                         tooltipAnticlockwise.show("Value must be 0 or between 36 and 270")
                         return;
                      }
-                    fAvg        = parseFloat( inputAnticlockwise.text );
-                    fAvgRounded = parseFloat(parseInt(fAvg));
+                    var fAnticlockwise        = parseFloat( inputAnticlockwise.text );
+                    var fAnticlockwiseRounded = parseFloat(parseInt(fAnticlockwise));
                     // Vérification fonctionnement avec un entier
-                    if( fAvg !== fAvgRounded )
+                    if( fAnticlockwise !== fAnticlockwiseRounded )
+                     {
+                        // On désactive l'état occupé
+                        wiperID.bBusyState         = false
+                        busyWiperSettings.visible  = false
+                        errorWiperSettings.visible = true
+                        tooltipAnticlockwise.show("Value must be an integer")
+                        return;
+                     }
+
+                    //---------------------
+                    // Offset angle
+                    //---------------------
+                    console.log( "inputOffset: "+inputOffset.text )
+                    var uiOffset;
+                    uiOffset = parseInt( inputOffset.text );
+                    // Test d'intégrité
+                    if(  ( uiOffset > 90 )
+                      || ( uiOffset <  0 ) )
+                     {
+                        // On désactive l'état occupé
+                        wiperID.bBusyState         = false
+                        busyWiperSettings.visible  = false
+                        errorWiperSettings.visible = true
+                        tooltipAnticlockwise.show("Value must be between 0 and 90")
+                        return;
+                     }
+                    var fOffset        = parseFloat( inputOffset.text );
+                    var fOffsetRounded = parseFloat(parseInt(fOffset));
+                    // Vérification fonctionnement avec un entier
+                    if( fOffset !== fOffsetRounded )
                      {
                         // On désactive l'état occupé
                         wiperID.bBusyState         = false
@@ -476,9 +597,11 @@ Item {
                     // Mise à jour des variables
                     wiperID.uiClockwise     = uiClockwise;
                     wiperID.uiAnticlockwise = uiAnticlockwise;
+                    wiperID.uiOffset        = uiOffset;
                     // Récupération des paramètres à jour
                     wiperID.submitWiperAngle(parseInt(uiClockwise),
-                                             parseInt(uiAnticlockwise));
+                                             parseInt(uiAnticlockwise),
+                                             parseInt(uiOffset));
                     // Mise à jour du datetime de calibration
                     //inputDateTime.text = wiperID.sSaveCurrentCalibrationDateTime( calibrationID.currentChannel );
                     // Sauvegarde de la configuration
@@ -518,6 +641,208 @@ Item {
 
         //----------------------------------------------------------------
         //--------------------------------------------------
+        // Bloc : Wiper calibration
+        //--------------------------------------------------
+        DropShadow {
+            color: "#20000000"
+            radius: 12
+            verticalOffset: 0
+            anchors.fill: wiperCalibration
+            samples: 30
+            horizontalOffset: 0
+            source: wiperCalibration
+        }
+        Rectangle {
+            id: wiperCalibration
+            width: wiperPartID.width - 120
+
+            height: 86
+            color: "#ffffff"
+            anchors.top: wiperSettings.bottom
+            anchors.topMargin: 30
+            anchors.horizontalCenter: parent.horizontalCenter
+            Rectangle {
+                id: wiperCalibrationRect15
+                x: 0
+                y: 0
+                width: parent.width
+                height: 34
+                color: "#e4e3e9"
+                Text {
+                    id: wiperCalibrationElt5
+                    x: 63
+                    y: 14
+                    text: qsTr("Wiper calibration")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.weight: Font.DemiBold
+                    font.family: "Open Sans"
+                    font.bold: false
+                    font.pixelSize: 13
+                }
+                transformOrigin: Item.Center
+                clip: false
+            }
+
+            ColumnLayout {
+                id: columnLayoutWiperCalibration
+                x: 0
+                y: 38
+                width: parent.width
+                height: 43
+
+                RowLayout {
+                    id: rowWiperCalibration
+                    width: parent.width - 20
+                    height: 30
+                    Layout.leftMargin: 10
+                    spacing: 5
+                    Layout.preferredWidth: parent.width - 20
+                    Layout.preferredHeight: 30
+
+                    Rectangle {
+                        id: rowWiperCalibration2
+                        width: ( parent.width - 25 ) / 3
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+                        height: parent.height
+                        Layout.preferredHeight: parent.height
+
+                        Image {
+                            id: imgWiperCalibration
+                            width: 30
+                            height: 20
+                            anchors.verticalCenter: parent.verticalCenter
+                            fillMode: Image.PreserveAspectFit
+                            source: "qrc:/Logo/Dashboard/dashboard-refresh.png"
+                        }
+
+                        Text {
+                            id: txtWiperCalibration
+                            text: qsTr("Launch a calibration")
+                            height: parent.height
+                            anchors.left: imgWiperCalibration.right
+                            anchors.leftMargin: 10
+                            anchors.verticalCenter: parent.verticalCenter
+                            verticalAlignment: Text.AlignVCenter
+                            font.family: "open sans"
+                            font.pixelSize: 12
+                            font.weight: Font.DemiBold
+                        }
+                    }
+
+                    //Row {
+                    Rectangle {
+                        id: rowWiperCalibration3
+                        width: ( parent.width - 25 ) / 3
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+                        height: parent.height
+                        Layout.preferredHeight: parent.height
+
+                        ////////////////////////////////////////
+                        DropShadow {
+                            color: "#20000000"
+                            radius: 10
+                            verticalOffset: 0
+                            anchors.fill:btnWiperCalibrationRect
+                            samples: 25
+                            horizontalOffset: 0
+                            source: btnWiperCalibrationRect
+                        }
+                        Rectangle {
+                            id: btnWiperCalibrationRect
+                            width: 100
+                            height: 28
+                            Layout.leftMargin: 41
+                            Layout.preferredHeight: 30
+                            color: "#193d8a"
+                            radius: 7
+                            anchors.verticalCenter: parent.verticalCenter
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            transformOrigin: Item.Center
+                            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+
+                            Timer {
+                                id: btnWiperCalibrationTimer
+                                interval: 2200; running: false; repeat: false
+                                onTriggered: {
+                                    busyRefreshCalibration.visible = false
+                                }
+                            }
+
+                            Text {
+                                id: btnWiperCalibrationTxt
+                                x: 28
+                                y: 17
+                                color: "white"
+                                text: qsTr("Start")
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                horizontalAlignment: Text.AlignHCenter
+                                anchors.verticalCenterOffset: 0
+                                anchors.verticalCenter: parent.verticalCenter
+                                font.family: "Open Sans"
+                                font.pixelSize: 11
+                            }
+
+                            MouseArea {
+                                id: mouseAreaBtnCalibrationWiper
+                                anchors.fill: parent
+                                hoverEnabled: true
+                                onClicked: {
+                                    console.log(" clicked" )
+                                    // On active l'état occupé
+                                    wiperID.bBusyState = true
+                                    // On fait apparaître le busy
+                                    busyRefreshCalibration.visible = true
+                                    // Déclenchement du balai
+                                    wiperID.startCalibration();
+                                }
+                                onEntered: {
+                                    parent.color = "#32549C"
+                                }
+                                onExited:  {
+                                    parent.color = "#193d8a"
+                                }
+                            }
+                        }
+                        ////////////////////////////////
+
+
+
+                    }
+
+                    Rectangle {
+                        id: rectangleRefreshCalibrationLoad2
+                        width: 200
+                        height: 200
+                        color: "#ffffff"
+                        Layout.preferredHeight: parent.height
+                        Layout.preferredWidth: ( parent.width - 15 ) / 3
+                        BusyIndicatorPerso {
+                            id: busyRefreshCalibration
+                            width: 36
+                            height: 37
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.verticalCenter: parent.verticalCenter
+                            visible: false
+                        }
+                        Text {
+                            id: wiperCalibrationElt51
+                            text: wiperID.uiMin + " " + wiperID.uiMax
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.verticalCenter: parent.verticalCenter
+                            font.weight: Font.DemiBold
+                            font.family: "Open Sans"
+                            font.bold: false
+                            font.pixelSize: 13
+                        }
+
+                    }
+                }
+            }
+        } // Fin bloc refresh
+        //--------------------------------------------------------------------------
+        //----------------------------------------------------------------
+        //--------------------------------------------------
         // Bloc : Wiper test
         //--------------------------------------------------
         DropShadow {
@@ -531,14 +856,11 @@ Item {
         }
         Rectangle {
             id: wiperTest
-            //x: 60
-            //y: 99
             width: wiperPartID.width - 120
 
-            //implicitWidth: 536
             height: 86
             color: "#ffffff"
-            anchors.top: wiperSettings.bottom
+            anchors.top: wiperCalibration.bottom
             anchors.topMargin: 30
             anchors.horizontalCenter: parent.horizontalCenter
             Rectangle {
@@ -630,11 +952,8 @@ Item {
                         }
                         Rectangle {
                             id: btnWiperTestRect
-                            //x: 216
-                            //y: 53
                             width: 100
                             height: 28
-                            //text: qsTr("Refresh")
                             Layout.leftMargin: 41
                             Layout.preferredHeight: 30
                             color: "#193d8a"

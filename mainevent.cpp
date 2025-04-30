@@ -202,11 +202,17 @@ if( tWIMOParametersSensor.tHeader.tProduct.cType == 'W' )
   "            uiClockwiseAngle\t\t\t\t%d\n"
   "            uiCounterClockwiseAngle\t\t\t\t%d\n"
   "            cPeriod\t\t\t\t%d\n"
-  "            uiParkingAngle\t\t\t\t%d\n",
+  "            uiParkingAngle\t\t\t\t%d\n"
+  "            uiMin\t\t\t\t%d\n"
+  "            uiMax\t\t\t\t%d\n"
+  "            uiOffset\t\t\t\t%d\n",
   tWIMOParametersSensor.tHeader.tWiper.uiClockwiseAngle,
   tWIMOParametersSensor.tHeader.tWiper.uiCounterClockwiseAngle,
   tWIMOParametersSensor.tHeader.tWiper.cPeriod,
-  tWIMOParametersSensor.tHeader.tWiper.uiParkingAngle );
+  tWIMOParametersSensor.tHeader.tWiper.uiParkingAngle ,
+  tWIMOParametersSensor.tHeader.tWiper.uiMinValue,
+  tWIMOParametersSensor.tHeader.tWiper.uiMaxValue,
+  tWIMOParametersSensor.tHeader.tWiper.uiOffset );
  }
 if( tWIMOParametersSensor.tHeader.tProduct.cType == 'U' )
  {
