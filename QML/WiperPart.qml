@@ -24,7 +24,7 @@ Item {
         objectName: "wiperID"
         uiClockwise: 0
         uiAnticlockwise: 0
-        uiOffset: 0
+        iOffset: 0
         uiMin: 0
         uiMax: 0
         bBusyState: false
@@ -424,7 +424,7 @@ Item {
                     }
                     TextField {
                         id: inputOffset
-                        text: wiperID.uiOffset
+                        text: wiperID.iOffset
                         height: 30
                         activeFocusOnPress: true
                         Layout.preferredHeight: 30
@@ -568,17 +568,17 @@ Item {
                     // Offset angle
                     //---------------------
                     console.log( "inputOffset: "+inputOffset.text )
-                    var uiOffset;
-                    uiOffset = parseInt( inputOffset.text );
+                    var iOffset;
+                    iOffset = parseInt( inputOffset.text );
                     // Test d'intégrité
-                    if(  ( uiOffset > 90 )
-                      || ( uiOffset <  0 ) )
+                    if(  ( iOffset > 90 )
+                      || ( iOffset < -90 ) )
                      {
                         // On désactive l'état occupé
                         wiperID.bBusyState         = false
                         busyWiperSettings.visible  = false
                         errorWiperSettings.visible = true
-                        tooltipAnticlockwise.show("Value must be between 0 and 90")
+                        tooltipAnticlockwise.show("Value must be between -90 and 90")
                         return;
                      }
                     var fOffset        = parseFloat( inputOffset.text );
@@ -597,11 +597,11 @@ Item {
                     // Mise à jour des variables
                     wiperID.uiClockwise     = uiClockwise;
                     wiperID.uiAnticlockwise = uiAnticlockwise;
-                    wiperID.uiOffset        = uiOffset;
+                    wiperID.iOffset         = iOffset;
                     // Récupération des paramètres à jour
                     wiperID.submitWiperAngle(parseInt(uiClockwise),
                                              parseInt(uiAnticlockwise),
-                                             parseInt(uiOffset));
+                                             parseInt(iOffset));
                     // Mise à jour du datetime de calibration
                     //inputDateTime.text = wiperID.sSaveCurrentCalibrationDateTime( calibrationID.currentChannel );
                     // Sauvegarde de la configuration

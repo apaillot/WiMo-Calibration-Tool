@@ -343,3 +343,7 @@ IHM PC permettant la calibration des capteurs WiMo.<BR>
   
 ### V1.3.8 - 2024.11.26
 - Calib - DO - Les points de calibration pour l'O2 température sont inversés.
+  
+### V1.3.10 - 2025.05.13
+- Wiper - Evolution pour gestion balai V2.0.0, pris en compte d'un offset pour position de parking et consigne de position.
+- Wiper - Evolution pour gestion balai V2.0.0, bouton commande calibration du 0 du potentiomètre.

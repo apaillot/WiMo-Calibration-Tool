@@ -188,11 +188,11 @@ void vFWIMOParameterConfProductQMLUpdate( void )
   {
    // Debug
    qDebug( "Refresh CPP Clockwise: %d", tWIMOParametersSensor.tHeader.tWiper.uiClockwiseAngle );
-   qDebug( "Refresh CPP Clockwise: %d", tWIMOParametersSensor.tHeader.tWiper.uiCounterClockwiseAngle );
+   qDebug( "Refresh CPP Clockwise: %d", tWIMOParametersSensor.tHeader.tWiper.uiAnticlockwiseAngle );
    // Angle capteur
    ptWiperObj->setProperty("uiClockwise",     tWIMOParametersSensor.tHeader.tWiper.uiClockwiseAngle);
-   ptWiperObj->setProperty("uiAnticlockwise", tWIMOParametersSensor.tHeader.tWiper.uiCounterClockwiseAngle);
-   ptWiperObj->setProperty("uiOffset",        tWIMOParametersSensor.tHeader.tWiper.uiOffset);
+   ptWiperObj->setProperty("uiAnticlockwise", tWIMOParametersSensor.tHeader.tWiper.uiAnticlockwiseAngle);
+   ptWiperObj->setProperty("iOffset",         tWIMOParametersSensor.tHeader.tWiper.iOffset);
    ptWiperObj->setProperty("uiMin",           tWIMOParametersSensor.tHeader.tWiper.uiMinValue);
    ptWiperObj->setProperty("uiMax",           tWIMOParametersSensor.tHeader.tWiper.uiMaxValue);
   }

@@ -93,11 +93,11 @@ void Wiper::setAnticlockwise(int n)
 //----------------------------------------------------------
 int Wiper::getOffset()
 {
- return m_uiOffset;
+ return m_iOffset;
 }
 void Wiper::setOffset(int n)
 {
- m_uiOffset = n;
+ m_iOffset = n;
  emit offsetChanged();
 }
 
@@ -160,13 +160,13 @@ void Wiper::setErrorState(bool n)
 //----------------------------------------------------------
 Q_INVOKABLE void Wiper::submitWiperAngle( unsigned int uiClockwise,
                                           unsigned int uiAnticlockwise,
-                                          unsigned int uiOffset  )
+                                          int iOffset  )
 {
  qDebug("==Wiper::submitWiperAngle==");
  qDebug() << "uiClockwise = %d" << uiClockwise;
  qDebug("uiClockwise = %d",uiClockwise);
  qDebug("uiAnticlockwise = %d",uiAnticlockwise);
- qDebug("uiOffset = %d",uiOffset);
+ qDebug("iOffset = %d",iOffset);
  // Test d'intégrité
  if(  (  ( uiClockwise > 270 )
       || ( uiClockwise < 30  ) )
@@ -174,12 +174,12 @@ Q_INVOKABLE void Wiper::submitWiperAngle( unsigned int uiClockwise,
  if(  (  ( uiAnticlockwise > 270 )
       || ( uiAnticlockwise < 30  ) )
    && ( uiAnticlockwise != 0       ) ) return;
- if( uiOffset > 90 ) return;
+ if( iOffset > 90 ) return;
 
  // Mise à jour des variables de la structure
  tWIMOParametersSensor.tHeader.tWiper.uiClockwiseAngle        = ( TUINT )uiClockwise;
- tWIMOParametersSensor.tHeader.tWiper.uiCounterClockwiseAngle = ( TUINT )uiAnticlockwise;
- tWIMOParametersSensor.tHeader.tWiper.uiOffset                = ( TUINT )uiOffset;
+ tWIMOParametersSensor.tHeader.tWiper.uiAnticlockwiseAngle = ( TUINT )uiAnticlockwise;
+ tWIMOParametersSensor.tHeader.tWiper.iOffset                 = ( TINT )iOffset;
 }
 
 

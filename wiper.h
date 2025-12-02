@@ -55,7 +55,7 @@ class Wiper : public QObject
  Q_OBJECT
  Q_PROPERTY(int uiClockwise     READ getClockwise       WRITE setClockwise      NOTIFY clockwiseChanged)
  Q_PROPERTY(int uiAnticlockwise READ getAnticlockwise   WRITE setAnticlockwise  NOTIFY anticlockwiseChanged)
- Q_PROPERTY(int uiOffset        READ getOffset          WRITE setOffset         NOTIFY offsetChanged)
+ Q_PROPERTY(int iOffset         READ getOffset          WRITE setOffset         NOTIFY offsetChanged)
  Q_PROPERTY(int uiMin           READ getMin             WRITE setMin            NOTIFY minChanged)
  Q_PROPERTY(int uiMax           READ getMax             WRITE setMax            NOTIFY maxChanged)
  Q_PROPERTY(bool bBusyState     READ getBusyState       WRITE setBusyState      NOTIFY busyStateChanged)
@@ -88,7 +88,7 @@ public:
  // Validation angle de balai
  Q_INVOKABLE void submitWiperAngle( unsigned int uiClockwise,
                                     unsigned int uiAnticlockwise,
-                                    unsigned int uiOffset );
+                                    int iOffset );
  // Sauvegarde de la configuration vers le balai
  Q_INVOKABLE void saveConfiguration( void );
  // Start calibration balai
@@ -108,7 +108,7 @@ signals:
 private:
  int  m_uiClockwise;
  int  m_uiAnticlockwise;
- int  m_uiOffset;
+ int  m_iOffset;
  int  m_uiMin;
  int  m_uiMax;
  bool m_bBusyState;

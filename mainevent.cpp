@@ -200,19 +200,19 @@ if( tWIMOParametersSensor.tHeader.tProduct.cType == 'W' )
   sBufferTree += QString::asprintf(
   "        tWiper\t\t\t\t-\n"
   "            uiClockwiseAngle\t\t\t\t%d\n"
-  "            uiCounterClockwiseAngle\t\t\t\t%d\n"
+  "            uiAnticlockwiseAngle\t\t\t\t%d\n"
   "            cPeriod\t\t\t\t%d\n"
-  "            uiParkingAngle\t\t\t\t%d\n"
+  "            iParkingAngle\t\t\t\t%d\n"
   "            uiMin\t\t\t\t%d\n"
   "            uiMax\t\t\t\t%d\n"
-  "            uiOffset\t\t\t\t%d\n",
+  "            iOffset\t\t\t\t%d\n",
   tWIMOParametersSensor.tHeader.tWiper.uiClockwiseAngle,
-  tWIMOParametersSensor.tHeader.tWiper.uiCounterClockwiseAngle,
+  tWIMOParametersSensor.tHeader.tWiper.uiAnticlockwiseAngle,
   tWIMOParametersSensor.tHeader.tWiper.cPeriod,
-  tWIMOParametersSensor.tHeader.tWiper.uiParkingAngle ,
+  tWIMOParametersSensor.tHeader.tWiper.iParkingAngle,
   tWIMOParametersSensor.tHeader.tWiper.uiMinValue,
   tWIMOParametersSensor.tHeader.tWiper.uiMaxValue,
-  tWIMOParametersSensor.tHeader.tWiper.uiOffset );
+  tWIMOParametersSensor.tHeader.tWiper.iOffset );
  }
 if( tWIMOParametersSensor.tHeader.tProduct.cType == 'U' )
  {

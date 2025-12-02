@@ -57,15 +57,6 @@ public:
     void stopBootLoaderMode( void );
     bool isWriteBufferFree( void );
 
-private:
-    QSerialPort *m_serialPort = nullptr;
-    QByteArray m_writeData;
-    //QTextStream m_standardOutput;
-    qint64 m_bytesWritten = 0;
-    QTimer * m_ptTimerModbus;
-    TBOOL m_bRXMode = aFALSE;
-    bool  m_bBootLoaderMode = false;
-    bool  m_bWriteBufferEmpty = true;
 signals:
 
 public slots:
@@ -77,6 +68,14 @@ private slots:
     //void handleError(QSerialPort::SerialPortError error);
 
 private:
+ QSerialPort *m_serialPort = nullptr;
+ QByteArray m_writeData;
+ //QTextStream m_standardOutput;
+ qint64 m_bytesWritten = 0;
+ QTimer * m_ptTimerModbus;
+ TBOOL m_bRXMode = aFALSE;
+ bool  m_bBootLoaderMode = false;
+ bool  m_bWriteBufferEmpty = true;
  QByteArray tqByteArray;
 };
 

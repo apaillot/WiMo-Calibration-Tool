@@ -260,15 +260,15 @@ typedef struct
        struct
         {
          TUINT  uiClockwiseAngle;
-         TUINT  uiCounterClockwiseAngle;
+         TUINT  uiAnticlockwiseAngle;
          TCHAR  cPeriod;
-         TUINT  uiParkingAngle;
+         TINT   iParkingAngle;
          TUCHAR ucDummy1;
          TUCHAR ucDummy2;
          TUCHAR ucDummy3;
          TUINT  uiMinValue;
          TUINT  uiMaxValue;
-         TUINT  uiOffset;
+         TINT   iOffset;
         }
        tWiper;
        struct
